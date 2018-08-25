@@ -2,6 +2,7 @@
 
 ## Shell
 
+* [git](https://git-scm.com/)
 * [brew](https://brew.sh/)
 * [hstr](https://github.com/dvorka/hstr)
 * [gbt](https://github.com/jtyr/gbt)
@@ -9,6 +10,10 @@
 * [nvim](https://github.com/neovim/neovim)
 * [exa](https://github.com/ogham/exa)
 * [git-review](https://www.mediawiki.org/wiki/Gerrit/git-review)
+* [fpp](https://github.com/facebook/PathPicker)
+* [parallel](https://www.gnu.org/software/parallel/)
+* [thefuck](https://github.com/nvbn/thefuck)
+* [cht.sh](https://github.com/chubin/cheat.sh)
 
 ## Vim
 
@@ -28,6 +33,7 @@
 * [Tunnelblick](https://tunnelblick.net/)
 * [MacPass](https://macpassapp.org/)
 * [Krita](https://krita.org/en/)
+* [Textual](https://github.com/Codeux-Software/Textual)
 
 ## Installation
 
