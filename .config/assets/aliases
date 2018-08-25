@@ -1,4 +1,5 @@
 # Aliases
+
 ## If exa is installed, 'use' it instead of ls
 if [[ $(which exa) ]]; then
     alias ls='exa --header --group --accessed --modified --created --links --inode --blocks --header'
@@ -7,6 +8,7 @@ else
     alias ls='ls -hG'
     alias ll='ls -l'
 fi
+
 alias gdrive='cd /Volumes/GoogleDrive/My\ Drive'
 alias onedrive='cd $(defaults read com.microsoft.OneDrive | grep NSNavLastRoot | sed -e "s/.*\(\/Volumes.*\)\"\;/\1\/OneDrive/")'
 alias go_back='cd $OLDPWD'

@@ -6,7 +6,7 @@ export LANG=en_US.UTF-8
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion 
 
 # Source sensible-bash
-[ -f $HOME/.config/assets/sensible.bash ] && source $HOME/.config/assets/sensible.bash > /dev/null 2>%1
+[ -f $HOME/.config/assets/sensible.bash ] && source $HOME/.config/assets/sensible.bash > /dev/null 2>/dev/null
 
 # Source aliases
 [ -f $HOME/.config/assets/aliases ] && source $HOME/.config/assets/aliases
