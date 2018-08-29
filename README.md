@@ -27,6 +27,8 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [cht.sh](https://github.com/chubin/cheat.sh) - Cheat sheet.
 * [ipmitool](https://github.com/ipmitool/ipmitool) - Control IPMI.
 * [mackup](https://github.com/lra/mackup) - Backup MacOS app configuration.
+* [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
+* [NodeJS](https://nodejs.org/en/) - JavaScript runtime.
 
 ## Vim
 
