@@ -10,8 +10,8 @@ else
 fi
 
 alias gdrive='cd /Volumes/GoogleDrive/My\ Drive'
-alias onedrive='cd $(defaults read com.microsoft.OneDrive | grep NSNavLastRoot | sed -e "s/.*\(\/Volumes.*\)\"\;/\1\/OneDrive/")'
-alias go_back='cd $OLDPWD'
+alias onedrive='cd $(defaults read com.microsoft.OneDrive-mac | grep NSNavLastRoot | sed -e "s/.*\"\(.*\)\"\;/\1\/OneDrive/")'
+alias grep='grep --color'
 alias less='less -rf'
 alias mv='mv -i'
 alias rm='rm -i'
