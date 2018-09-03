@@ -4,10 +4,13 @@ if [[ $(which gbt) ]]; then
     export GBT_CARS='Status, Os, Hostname, PyVirtEnv, Dir, Git, Sign'
     export VIRTUAL_ENV_DISABLE_PROMPT='1'
     export GBT_CAR_OS_BG='black'
+    export GBT_CAR_HOSTNAME_USERHOST_FORMAT='{{ User }}'
     export GBT_CAR_EXECTIME_BG='137'
     export GBT_CAR_TIME_BG='dark_gray'
     export GBT_CAR_HOSTNAME_BG='238'
     export GBT_CAR_DIR_BG='132'
     export GBT_CAR_GIT_BG='3'
     export GBT_CAR_SIGN_FORMAT=''
+    export GBT_CAR_HOSTNAME_BG='60'
+    export GBT_CAR_HOSTNAME_FG='15'
 fi
