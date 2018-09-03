@@ -38,7 +38,8 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 ## Applications
 
-* [Vivaldi Snapshot](https://vivaldi.com/blog/snapshots/) - Browser.
+* ~~[Vivaldi Snapshot](https://vivaldi.com/blog/snapshots/) - Browser.~~ Vivaldi is not a consistent experience cross devices.
+* [Firefox](https://www.mozilla.org/en-US/firefox/) - Browser.
 * [iTerm2 Beta](https://www.iterm2.com/downloads.html) - Terminal.
 * [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) - Text editor.
 * [Itsyscal](https://www.mowglii.com/itsycal/) - Menu bar calendar.
