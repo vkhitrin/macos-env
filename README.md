@@ -29,6 +29,7 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [mackup](https://github.com/lra/mackup) - Backup MacOS app configuration.
 * [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
 * [NodeJS](https://nodejs.org/en/) - JavaScript runtime.
+* [lighttpd](https://redmine.lighttpd.net/projects/lighttpd/wiki) - Light httpd server.
 
 ## Vim
 
@@ -38,7 +39,6 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 ## Applications
 
-* ~~[Vivaldi Snapshot](https://vivaldi.com/blog/snapshots/) - Browser.~~ Vivaldi is not a consistent experience cross devices.
 * [Firefox](https://www.mozilla.org/en-US/firefox/) - Browser.
 * [iTerm2 Beta](https://www.iterm2.com/downloads.html) - Terminal.
 * [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) - Text editor.
@@ -47,6 +47,7 @@ Application configuration are more 'static' as a part of my workflow and they're
   * [Paste](https://pasteapp.me/) - Clipboard manager.
   * [BetterTouchTool](https://folivora.ai/) - Customize input devices + Window snapping.
   * [Bartender](https://www.macbartender.com/) - Organize MacOS menu bar.
+  * [Gifox](https://gifox.io/) - Gif recording.
 * [Mailspring](https://getmailspring.com/) - Email client.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
 * [MacPass](https://macpassapp.org/) - KeePass client.
