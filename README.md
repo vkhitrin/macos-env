@@ -14,7 +14,7 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 * [git](https://git-scm.com/) - Version control tool.
 * [brew](https://brew.sh/) - Package manager for MacOS.
-* [hstr](https://github.com/dvorka/hstr) - History prompt in bash.
+* [hh](https://github.com/dvorka/hstr) - History prompt in bash.
 * [gbt](https://github.com/jtyr/gbt) - Prompt bullet train for bash.
 * bash-completion - Auto completion for bash.
 * [bash-sensible](https://github.com/mrzool/bash-sensible) - Bash enhancements.
@@ -23,8 +23,6 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [git-review](https://www.mediawiki.org/wiki/Gerrit/git-review) - Gerrit tool for git.
 * [fpp](https://github.com/facebook/PathPicker) - PathPicker utility.
 * [parallel](https://www.gnu.org/software/parallel/) - Perform parallel jobs from stdin.
-* [thefuck](https://github.com/nvbn/thefuck) - Command correction tool.
-* [cht.sh](https://github.com/chubin/cheat.sh) - Cheat sheet.
 * [ipmitool](https://github.com/ipmitool/ipmitool) - Control IPMI.
 * [mackup](https://github.com/lra/mackup) - Backup MacOS app configuration.
 * [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
