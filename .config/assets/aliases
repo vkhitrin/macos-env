@@ -16,4 +16,3 @@ alias less='less -rf'
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
-which thefuck > /dev/null && eval $(thefuck --alias)
