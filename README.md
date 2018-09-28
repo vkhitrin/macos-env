@@ -46,7 +46,7 @@ Application configuration are more 'static' as a part of my workflow and they're
   * [BetterTouchTool](https://folivora.ai/) - Customize input devices + Window snapping.
   * [Bartender](https://www.macbartender.com/) - Organize MacOS menu bar.
   * [Gifox](https://gifox.io/) - Gif recording.
-* [Mailspring](https://getmailspring.com/) - Email client.
+  * [Canary Mail](https://canarymail.io/) - Mail client.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
 * [MacPass](https://macpassapp.org/) - KeePass client.
 * [Krita](https://krita.org/en/) - Image manipulation.
