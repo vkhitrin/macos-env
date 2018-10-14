@@ -1,6 +1,8 @@
 # Personal MacOS dotfiles + tools used that are part of my workflow
 
-Using MacOS High Sierra 10.13.6
+Using MacOS High Sierra 10.13.6 on Desktop
+
+Using MacOS Mojave 10.14 on Laptop
 
 ## Mackup vs Git
 
