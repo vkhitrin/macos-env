@@ -22,7 +22,6 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [exa](https://github.com/ogham/exa) - An ls alternative.
 * [git-review](https://www.mediawiki.org/wiki/Gerrit/git-review) - Gerrit tool for git.
 * [fpp](https://github.com/facebook/PathPicker) - PathPicker utility.
-* [parallel](https://www.gnu.org/software/parallel/) - Perform parallel jobs from stdin.
 * [ipmitool](https://github.com/ipmitool/ipmitool) - Control IPMI.
 * [mackup](https://github.com/lra/mackup) - Backup MacOS app configuration.
 * [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
@@ -48,7 +47,7 @@ Application configuration are more 'static' as a part of my workflow and they're
   * [Gifox](https://gifox.io/) - Gif recording.
   * [Canary Mail](https://canarymail.io/) - Mail client.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
-* [MacPass](https://macpassapp.org/) - KeePass client.
+* [KeePassXC](https://keepassxc.org/) - KeePass client.
 * [Krita](https://krita.org/en/) - Image manipulation.
 * [Textual](https://github.com/Codeux-Software/Textual) - IRC client.
 
