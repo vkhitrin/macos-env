@@ -55,7 +55,7 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 ## Hardware
 
-Refer to [Hardware README]().
+Refer to [Hardware README](https://github.com/VKhitrin/macos-env/tree/master/Hardware).
 
 ## Installation
 
