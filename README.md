@@ -53,6 +53,10 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [Krita](https://krita.org/en/) - Image manipulation.
 * [Textual](https://github.com/Codeux-Software/Textual) - IRC client.
 
+## Hardware
+
+Refer to [Hardware README]().
+
 ## Installation
 
 Installation script is in progress, meanwhile copy all the relevant dot files to the home directory.
