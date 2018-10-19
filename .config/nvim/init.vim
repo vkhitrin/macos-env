@@ -6,6 +6,8 @@ set number
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 "" Plugins config
@@ -15,6 +17,9 @@ let g:airline_theme='night_owl'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" Key mappings
+map <C-n> :NERDTreeToggle<CR>
 
 " unicode symbols
 let g:airline_left_sep = '»'

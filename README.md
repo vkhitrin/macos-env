@@ -35,6 +35,8 @@ Application configuration are more 'static' as a part of my workflow and they're
 * [Vim Plug](https://github.com/vim-airline/vim-airline) - Plugin manager for vim.
 * [Airlne](https://github.com/junegunn/vim-plug) - Bullet train for vim.
 * [Airline Themes](https://github.com/vim-airline/vim-airline-themes) - Themes for Airline.
+* [Nerdtree](https://github.com/scrooloose/nerdtree) - Tree explorer for vim.
+* [Nerdtree git plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - Git status for nerdtree.
 
 ## Applications
 
