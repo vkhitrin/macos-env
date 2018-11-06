@@ -1,3 +1,4 @@
+brew remove bash-completion
 brew remove git
 brew remove hh
 brew untap jtyr/repo
