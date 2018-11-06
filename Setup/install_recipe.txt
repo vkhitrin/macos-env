@@ -1,0 +1,13 @@
+brew install git
+brew install hh
+brew tap jtyr/repo
+brew install gbt
+brew install neovim
+brew install exa
+brew install git-review
+brew install fpp
+brew install ipmitool
+pip install --user mackup
+brew install ipcalc
+brew install nodejs
+brew install lighttpd

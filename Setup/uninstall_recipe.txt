@@ -1,0 +1,13 @@
+brew remove git
+brew remove hh
+brew untap jtyr/repo
+brew remove gbt
+brew remove neovim
+brew remove exa
+brew remove git-review
+brew remove fpp
+brew remove ipmitool
+pip uninstall --user -y buser mackup
+brew remove ipcalc
+brew remove nodejs
+brew remove lighttpd

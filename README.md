@@ -12,7 +12,17 @@ In my personal preference, I rather have my dotfiles in git because dotfiles are
 
 Application configuration are more 'static' as a part of my workflow and they're not changed as often as dotfiles. Mackup is a great solution since it's less important to document the changes.
 
-## Shell
+## Installation
+
+**Note:** Currently a simple install/uninstall scripts are present, still WIP.
+**Note:** Will run only on MacOS.
+**Note:** Doesn't download neovim plugins.
+
+In order to install dot files and CLI utilities, use `make install`.
+
+In order to uninstall dot files and CLI utilities, use `make uninstall`.
+
+## CLI
 
 * [git](https://git-scm.com/) - Version control tool.
 * [brew](https://brew.sh/) - Package manager for MacOS.
@@ -32,8 +42,8 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 ## Vim
 
-* [Vim Plug](https://github.com/vim-airline/vim-airline) - Plugin manager for vim.
-* [Airlne](https://github.com/junegunn/vim-plug) - Bullet train for vim.
+* [Vim Plug](https://github.com/junegunn/vim-plug) - Plugin manager for vim.
+* [Airlne](https://github.com/vim-airline/vim-airline) - Bullet train for vim.
 * [Airline Themes](https://github.com/vim-airline/vim-airline-themes) - Themes for Airline.
 * [Nerdtree](https://github.com/scrooloose/nerdtree) - Tree explorer for vim.
 * [Nerdtree git plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - Git status for nerdtree.
@@ -58,7 +68,3 @@ Application configuration are more 'static' as a part of my workflow and they're
 ## Hardware
 
 Refer to [Hardware README](https://github.com/VKhitrin/macos-env/tree/master/Hardware).
-
-## Installation
-
-Installation script is in progress, meanwhile copy all the relevant dot files to the home directory.
