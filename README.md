@@ -15,7 +15,9 @@ Application configuration are more 'static' as a part of my workflow and they're
 ## Installation
 
 **Note:** Currently a simple install/uninstall scripts are present, still WIP.
+
 **Note:** Will run only on MacOS.
+
 **Note:** Doesn't download neovim plugins.
 
 In order to install dot files and CLI utilities, use `make install`.
