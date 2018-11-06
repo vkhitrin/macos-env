@@ -4,9 +4,9 @@ function error_exit {
     exit "${2:-1}"
 }
 
-# Make sure script isn't executed on non MacOS systems
+# Make sure script isn't executed on non macOS systems
 if [[ $(uname) != "Darwin" ]];then
-    echo "Please make sure you're running on MacOS"
+    echo "Please make sure you're running on macOS"
     exit 1
 fi
 

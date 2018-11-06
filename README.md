@@ -1,8 +1,8 @@
-# Personal MacOS dotfiles + tools used that are part of my workflow
+# Personal macOS dotfiles + tools used that are part of my workflow
 
-Using MacOS High Sierra 10.13.6 on Desktop
+Using macOS High Sierra 10.13.6 on Desktop
 
-Using MacOS Mojave 10.14 on Laptop
+Using macOS Mojave 10.14 on Laptop
 
 ## Mackup vs Git
 
@@ -16,7 +16,7 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 **Note:** Currently a simple install/uninstall scripts are present, still WIP.
 
-**Note:** Will run only on MacOS.
+**Note:** Will run only on macOS.
 
 **Note:** Doesn't download neovim plugins.
 
@@ -27,7 +27,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 ## CLI
 
 * [git](https://git-scm.com/) - Version control tool.
-* [brew](https://brew.sh/) - Package manager for MacOS.
+* [brew](https://brew.sh/) - Package manager for macOS.
 * [hh](https://github.com/dvorka/hstr) - History prompt in bash.
 * [gbt](https://github.com/jtyr/gbt) - Prompt bullet train for bash.
 * bash-completion - Auto completion for bash.
@@ -37,7 +37,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [git-review](https://www.mediawiki.org/wiki/Gerrit/git-review) - Gerrit tool for git.
 * [fpp](https://github.com/facebook/PathPicker) - PathPicker utility.
 * [ipmitool](https://github.com/ipmitool/ipmitool) - Control IPMI.
-* [mackup](https://github.com/lra/mackup) - Backup MacOS app configuration.
+* [mackup](https://github.com/lra/mackup) - Backup macOS app configuration.
 * [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
 * [NodeJS](https://nodejs.org/en/) - JavaScript runtime.
 * [lighttpd](https://redmine.lighttpd.net/projects/lighttpd/wiki) - Light httpd server.
@@ -59,7 +59,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [Setapp](https://setapp.com/):
   * [Paste](https://pasteapp.me/) - Clipboard manager.
   * [BetterTouchTool](https://folivora.ai/) - Customize input devices + Window snapping.
-  * [Bartender](https://www.macbartender.com/) - Organize MacOS menu bar.
+  * [Bartender](https://www.macbartender.com/) - Organize macOS menu bar.
   * [Gifox](https://gifox.io/) - Gif recording.
   * [Canary Mail](https://canarymail.io/) - Mail client.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
