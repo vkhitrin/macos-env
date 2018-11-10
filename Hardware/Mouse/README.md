@@ -4,24 +4,25 @@ Currently using [Logitech G600](https://www.logitechg.com/en-ca/products/gaming-
 
 Using inbuilt memory in order to program buttons:
 
-|  |   Regular   |   G-Shift  |
-|--|-------------|------------|
-|M01|Not Assigned|Not Assigned|
-|M02|Not Assigned|Not Assigned|
-|M03|Not Assigned|Not Assigned|
-|M04|Not Assigned|Not Assigned|
-|M05|Not Assigned|Not Assigned|
-|M07|Not Assigned|Not Assigned|
-|M08|Not Assigned|Not Assigned|
-|M09|Not Assigned|Not Assigned|
-|M10|Not Assigned|Not Assigned|
-|M11|Not Assigned|Not Assigned|
-|M12|Not Assigned|Not Assigned|
-|M13|Not Assigned|Not Assigned|
-|M14|Not Assigned|Not Assigned|
-|M15|Not Assigned|Not Assigned|
-|M16|Not Assigned|Not Assigned|
-|M17|Not Assigned|Not Assigned|
-|M18|Not Assigned|Not Assigned|
-|M19|Not Assigned|Not Assigned|
-|M20|Not Assigned|Not Assigned|
+|   |   Regular   |   G-Shift             |
+|---|-------------|-----------------------|
+|M01|  Left Click | Left Click            |
+|M02| Right Click | Right Click           |
+|M03|Middle Click |Middle Click           | 
+|M04|    Left     | Shift Left            |
+|M05|   Right     | Shift Right           |
+|M06|   G-Shift   |   G-Shift             |
+|M07| Unassigned  | Unassigned            |
+|M08| Unassigned  | Unassigned            |
+|M09| Copy(⌘C)    | Spotlight (⌘Space)    |
+|M10| Paste(⌘V)   | Shift+Command+V (⇧⌘V) |
+|M11| Cut(⌘X)     | Mission Control (⌃↑)  |
+|M12| Delete      | Unassigned            |
+|M13| Return      | Unassigned            |
+|M14| Unassigned  | Unassigned            |
+|M15| Unassigned  | Unassigned            |
+|M16| Unassigned  | Unassigned            |
+|M17| Unassigned  | Unassigned            |
+|M18| Unassigned  | Unassigned            |
+|M19| Unassigned  | Unassigned            |
+|M20| Unassigned  | Unassigned            |
