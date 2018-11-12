@@ -26,10 +26,12 @@ done <./Setup/install_recipe.txt
 			  		   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || error_exit "Failed to download Vim Plug"
 
 # Backup current dotfiles
-cp ~/.bashrc ~/.bashrc.bk
-cp ~/.bash_profile ~/.bash_profile.bk
-cp ~/.tmux.conf ~/.tmux.conf.bk
-cp ~/.tmux.conf.local ~/.tmux.conf.local.bk
+[ -f ~/.bashrc ] && cp ~/.bashrc ~/.bashrc.bk
+[ -f ~/.bash_profile ] && cp ~/.bash_profile ~/.bash_profile.bk
+echo "SOFRA"
+[ -f ~/.tmux.conf ] && cp ~/.tmux.conf ~/.tmux.conf.bk
+echo "DD"
+[ -f ~/.tmux.conf.local ] && cp ~/.tmux.conf.local ~/.tmux.conf.local.bk
 
 # Copy dotfiles to home directory
-cp -r -f .bashrc .bash_profile .config .tmux.conf .tmux.conf.local
+cp -r -f .bashrc .bash_profile .config .tmux.conf .tmux.conf.local ~
