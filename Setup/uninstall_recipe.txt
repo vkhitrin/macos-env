@@ -12,3 +12,4 @@ pip uninstall --user -y buser mackup
 brew remove ipcalc
 brew remove nodejs
 brew remove lighttpd
+brew remove ag

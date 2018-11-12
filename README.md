@@ -41,6 +41,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [ipcalc](http://jodies.de/ipcalc-archive/ipcalc-0.41/ipcalc) - IP calculator CLI tool.
 * [NodeJS](https://nodejs.org/en/) - JavaScript runtime.
 * [lighttpd](https://redmine.lighttpd.net/projects/lighttpd/wiki) - Light httpd server.
+* [ag](https://github.com/ggreer/the_silver_searcher) - The Silver Searcher, code searching tool.
 
 ## Vim
 
@@ -49,6 +50,8 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [Airline Themes](https://github.com/vim-airline/vim-airline-themes) - Themes for Airline.
 * [Nerdtree](https://github.com/scrooloose/nerdtree) - Tree explorer for vim.
 * [Nerdtree git plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - Git status for nerdtree.
+* [VimDevIcons](https://github.com/ryanoasis/vim-devicons) - Add devicons to vim plugins.
+* [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy searcher for vim.
 
 ## Applications
 

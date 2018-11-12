@@ -12,3 +12,4 @@ pip install --user mackup
 brew install ipcalc
 brew install nodejs
 brew install lighttpd
+brew install ag

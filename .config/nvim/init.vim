@@ -1,6 +1,11 @@
 "" General config
 set background=dark
 set number
+set hidden
+set nowrap
+set lazyredraw
+set expandtab
+set cursorline
 
 "" Plugins
 call plug#begin()
@@ -8,6 +13,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 "" Plugins config
@@ -17,6 +24,10 @@ let g:airline_theme='night_owl'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Key mappings
 map <C-n> :NERDTreeToggle<CR>
