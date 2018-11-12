@@ -13,3 +13,4 @@ brew install ipcalc
 brew install nodejs
 brew install lighttpd
 brew install ag
+brew install tmux

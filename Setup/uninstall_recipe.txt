@@ -13,3 +13,4 @@ brew remove ipcalc
 brew remove nodejs
 brew remove lighttpd
 brew remove ag
+brew remove tmux

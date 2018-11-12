@@ -28,6 +28,8 @@ done <./Setup/install_recipe.txt
 # Backup current dotfiles
 cp ~/.bashrc ~/.bashrc.bk
 cp ~/.bash_profile ~/.bash_profile.bk
+cp ~/.tmux.conf ~/.tmux.conf.bk
+cp ~/.tmux.conf.local ~/.tmux.conf.local.bk
 
 # Copy dotfiles to home directory
-cp -r -f .bashrc .bash_profile .config
+cp -r -f .bashrc .bash_profile .config .tmux.conf .tmux.conf.local

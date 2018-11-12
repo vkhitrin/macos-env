@@ -27,3 +27,5 @@ done <./Setup/uninstall_recipe.txt
 # Restore from backup if exists
 [ -f ~/.bashrc.bk ] && mv ~/.bashrc.bk ~/.bashrc
 [ -f ~/.bash_profile.bk ] && mv ~/.bash_profile.bk ~/.bash_profile
+[ -f ~/.tmux.conf.bk ] && mv ~/.tmux.conf.bk ~/.tmux.conf
+[ -f ~/.tmux.conf.local.bk ] && mv ~/.tmux.conf.bk ~/.tmux.conf.local

@@ -42,6 +42,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [NodeJS](https://nodejs.org/en/) - JavaScript runtime.
 * [lighttpd](https://redmine.lighttpd.net/projects/lighttpd/wiki) - Light httpd server.
 * [ag](https://github.com/ggreer/the_silver_searcher) - The Silver Searcher, code searching tool.
+* [tmux](https://github.com/tmux/tmux) - Terminal multiplexer.
 
 ## Vim
 
