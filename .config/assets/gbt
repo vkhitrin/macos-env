@@ -1,5 +1,5 @@
 # If gbt is installed use it
-if [[ $(which gbt) ]]; then
+if [[ $(which gbt) ]] 2>/dev/null; then
     PS1='$(gbt $?)'
     export GBT_CARS='Status, Os, Hostname, PyVirtEnv, Dir, Git, Sign'
     export VIRTUAL_ENV_DISABLE_PROMPT='1'

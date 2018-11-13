@@ -28,9 +28,7 @@ done <./Setup/install_recipe.txt
 # Backup current dotfiles
 [ -f ~/.bashrc ] && cp ~/.bashrc ~/.bashrc.bk
 [ -f ~/.bash_profile ] && cp ~/.bash_profile ~/.bash_profile.bk
-echo "SOFRA"
 [ -f ~/.tmux.conf ] && cp ~/.tmux.conf ~/.tmux.conf.bk
-echo "DD"
 [ -f ~/.tmux.conf.local ] && cp ~/.tmux.conf.local ~/.tmux.conf.local.bk
 
 # Copy dotfiles to home directory

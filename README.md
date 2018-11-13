@@ -67,6 +67,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
   * [Bartender](https://www.macbartender.com/) - Organize macOS menu bar.
   * [Gifox](https://gifox.io/) - Gif recording.
   * [Canary Mail](https://canarymail.io/) - Mail client.
+  * [Cloud Mounter](https://cloudmounter.net/) - Mount cloud/network drives.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
 * [KeePassXC](https://keepassxc.org/) - KeePass client.
 * [Krita](https://krita.org/en/) - Image manipulation.

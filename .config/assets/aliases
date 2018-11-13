@@ -1,7 +1,7 @@
 # Aliases
 
 ## If exa is installed, 'use' it instead of ls
-if [[ $(which exa) ]]; then
+if [[ $(which exa) ]] 2>/dev/null; then
     alias ls='exa --header --group --accessed --modified --created --links --inode --blocks --header'
     alias ll='ls --long'
 else
@@ -10,12 +10,10 @@ else
 fi
 
 ## if bat is installed, 'use' it instead of cat
-if [[ $(which bat) ]]; then
+if [[ $(which bat) ]] 2>/dev/null; then
     alias cat='bat'
 fi
 
-alias gdrive='cd /Volumes/GoogleDrive/My\ Drive'
-alias onedrive='cd $(defaults domains | awk -F'"'"','"'"' '"'"'{for(i=2; i<=NF; i++) print $i}'"'"' | grep "com.microsoft.OneDrive" | head -1 | xargs defaults read | grep NSNavLastRoot | sed -e "s/.*\"\(.*\)\"\;/\1\/OneDrive/")'
 alias grep='grep --color'
 alias less='less -rf'
 alias mv='mv -i'
