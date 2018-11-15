@@ -5,7 +5,7 @@ if [[ $(which gbt) ]] 2>/dev/null; then
     export GBT_CARS='Status, Os, PyVirtEnv, Hostname, Dir, Git, Sign'
     export VIRTUAL_ENV_DISABLE_PROMPT='1'
     export GBT_CAR_OS_BG='15'
-    export GBT_CAR_OS_FG='256'
+    export GBT_CAR_OS_FG='0'
     export GBT_CAR_HOSTNAME_USERHOST_FORMAT='{{ User }}'
     export GBT_CAR_EXECTIME_BG='137'
     export GBT_CAR_TIME_BG='dark_gray'
