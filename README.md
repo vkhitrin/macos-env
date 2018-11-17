@@ -1,6 +1,6 @@
 # Personal macOS dotfiles + tools used that are part of my workflow
 
-![Terminal](https://i.imgur.com/b82EiPd.png)
+![Terminal](https://i.imgur.com/zsUKBHt.png)
 
 Using macOS High Sierra 10.13.6 on Desktop
 
