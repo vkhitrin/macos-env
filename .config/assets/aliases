@@ -9,10 +9,17 @@ else
     alias ll='ls -l'
 fi
 
-## if bat is installed, 'use' it instead of cat
+## If bat is installed, 'use' it instead of cat
 if [[ $(which bat) ]] 2>/dev/null; then
     alias cat='bat'
 fi
+
+## If CloudMounter is mounting OneDrive, create an alias
+[[ -d ~/.CMVolumes/OneDrive/ ]] && alias onedrive='cd ~/.CMVolumes/OneDrive/'
+## If CloudMounter is mounting Personal Google Drive, create an alias
+[[ -d ~/.CMVolumes/Personal\ GDrive/ ]] && alias googledrivepersonal='cd ~/.CMVolumes/Personal\ GDrive/'
+## If CloudMounter is mounting Work Google Drive, create an alias
+[[ -d ~/.CMVolumes/Work\ GDrive/ ]] && alias googledrivework='cd ~/.CMVolumes/Work\ GDrive/'
 
 alias grep='grep --color'
 alias less='less -rf'
