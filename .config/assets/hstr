@@ -6,8 +6,7 @@ export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 
 # Using hstr if it's intalled
 if [[ $(which hstr) ]];then
-  export HH_CONFIG=hicolor         # get more colors
-  export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+  export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
   # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
   if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
   # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
