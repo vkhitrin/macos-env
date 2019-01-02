@@ -57,6 +57,9 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [Nerdtree git plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - Git status for nerdtree.
 * [VimDevIcons](https://github.com/ryanoasis/vim-devicons) - Add devicons to vim plugins.
 * [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy searcher for vim.
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show git diff.
+* [vim-surround](https://github.com/tpope/vim-surround) - Surround text.
+* [ALE](https://github.com/w0rp/ale) - Async Lint Engine.
 
 ## Applications
 
