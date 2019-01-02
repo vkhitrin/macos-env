@@ -15,3 +15,5 @@ brew install lighttpd
 brew install ag
 brew install tmux
 brew install bat
+brew install jq
+brew cask install docker

@@ -46,6 +46,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [ag](https://github.com/ggreer/the_silver_searcher) - The Silver Searcher, code searching tool.
 * [tmux](https://github.com/tmux/tmux) - Terminal multiplexer.
 * [bat](https://github.com/sharkdp/bat) - Cat clone.
+* [jq](https://github.com/stedolan/jq) - CLI JSON processor.
 
 ## Vim
 
@@ -61,19 +62,18 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 
 * [Firefox](https://www.mozilla.org/en-US/firefox/) - Browser.
 * [iTerm2 Beta](https://www.iterm2.com/downloads.html) - Terminal.
-* [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) - Text editor.
 * [Itsyscal](https://www.mowglii.com/itsycal/) - Menu bar calendar.
 * [Setapp](https://setapp.com/):
   * [Paste](https://pasteapp.me/) - Clipboard manager.
   * [BetterTouchTool](https://folivora.ai/) - Customize input devices + Window snapping.
   * [Bartender](https://www.macbartender.com/) - Organize macOS menu bar.
   * [Gifox](https://gifox.io/) - Gif recording.
-  * [Canary Mail](https://canarymail.io/) - Mail client.
   * [Cloud Mounter](https://cloudmounter.net/) - Mount cloud/network drives.
 * [Tunnelblick](https://tunnelblick.net/) - OpenVPN client.
 * [KeePassXC](https://keepassxc.org/) - KeePass client.
 * [Krita](https://krita.org/en/) - Image manipulation.
 * [Textual](https://github.com/Codeux-Software/Textual) - IRC client.
+* [Docker](https://www.docker.com/) - Container runtime.
 
 ## Hardware
 

@@ -15,3 +15,5 @@ brew remove lighttpd
 brew remove ag
 brew remove tmux
 brew remove bat
+brew remove jq
+brew cask uninstall docker
