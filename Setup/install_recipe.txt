@@ -1,3 +1,4 @@
+brew tap homebrew/cask-versions
 brew install bash-completion
 brew install git
 brew install hh
@@ -17,3 +18,12 @@ brew install tmux
 brew install bat
 brew install jq
 brew cask install docker
+brew cask install keepassxc-beta
+brew cask install iterm2-beta
+brew cask install spotify
+brew cask install notion
+brew cask install firefox
+brew cask install itsycal
+brew cask install krita
+brew cask install tunnelblick
+brew cask install blue-jeans

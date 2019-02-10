@@ -18,6 +18,8 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 **Note:** Currently a simple install/uninstall scripts are present, still WIP.
 
+**Note:** All applications listed below will be installed.
+
 **Note:** Will run only on macOS.
 
 **Note:** Doesn't download neovim plugins.
@@ -77,6 +79,9 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [Krita](https://krita.org/en/) - Image manipulation.
 * [Textual](https://github.com/Codeux-Software/Textual) - IRC client.
 * [Docker](https://www.docker.com/) - Container runtime.
+* [Notion](https://www.notion.so/) - All-in-one workspace.
+* [Spotify](https://www.spotify.com/) - Music Streaming.
+* [BlueJeans](https://www.bluejeans.com/) - Video Conference.
 
 ## Hardware
 

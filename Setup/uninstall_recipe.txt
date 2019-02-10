@@ -1,3 +1,4 @@
+brew untap homebrew/cask-versions
 brew remove bash-completion
 brew remove git
 brew remove hh
@@ -17,3 +18,12 @@ brew remove tmux
 brew remove bat
 brew remove jq
 brew cask uninstall docker
+brew cask uninstall keepassxc-beta
+brew cask uninstall iterm2-beta
+brew cask uninstall spotify
+brew cask uninstall notion
+brew cask uninstall firefox
+brew cask install itsycal
+brew cask uninstall krita
+brew cask uninstall tunnelblick
+brew cask uninstall blue-jeans
