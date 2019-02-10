@@ -1,6 +1,7 @@
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PATH=/usr/local/sbin:$PATH
 
 # Source bash-completion
 [ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion 
