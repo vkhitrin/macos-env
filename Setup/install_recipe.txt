@@ -19,7 +19,7 @@ brew install bat
 brew install jq
 brew cask install docker
 brew cask install keepassxc-beta
-brew cask install iterm2-beta
+brew cask install iterm2-nightly
 brew cask install spotify
 brew cask install notion
 brew cask install firefox

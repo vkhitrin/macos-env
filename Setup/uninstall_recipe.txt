@@ -19,7 +19,7 @@ brew remove bat
 brew remove jq
 brew cask uninstall docker
 brew cask uninstall keepassxc-beta
-brew cask uninstall iterm2-beta
+brew cask uninstall iterm2-nightly
 brew cask uninstall spotify
 brew cask uninstall notion
 brew cask uninstall firefox
