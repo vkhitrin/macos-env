@@ -7,8 +7,8 @@ Using inbuilt memory in order to program buttons:
 |M01|  Left Click | Left Click            |
 |M02| Right Click | Right Click           |
 |M03|Middle Click |Middle Click           | 
-|M04|    Left     | Shift Left            |
-|M05|   Right     | Shift Right           |
+|M04|    Left     | Control+Left(⌃←)      |
+|M05|   Right     | Control+Right(⌃→)     |
 |M06|   G-Shift   |   G-Shift             |
 |M07| Unassigned  | Unassigned            |
 |M08| Unassigned  | Unassigned            |
