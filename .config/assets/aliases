@@ -20,6 +20,8 @@ fi
 [[ -d ~/.CMVolumes/Personal\ GDrive/ ]] && alias googledrivepersonal='cd ~/.CMVolumes/Personal\ GDrive/'
 ## If CloudMounter is mounting Work Google Drive, create an alias
 [[ -d ~/.CMVolumes/Work\ GDrive/ ]] && alias googledrivework='cd ~/.CMVolumes/Work\ GDrive/'
+## If KeePassxc is installed, use it's CLI tool
+[[ -f /Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli ]] && alias keepassxc-cli='/Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli'
 
 alias grep='grep --color'
 alias less='less -rf'

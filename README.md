@@ -82,6 +82,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 * [Notion](https://www.notion.so/) - All-in-one workspace.
 * [Spotify](https://www.spotify.com/) - Music Streaming.
 * [BlueJeans](https://www.bluejeans.com/) - Video Conference.
+* [Visual Studio Code](https://code.visualstudio.com/) - Code Editor.
 
 ## Hardware
 
