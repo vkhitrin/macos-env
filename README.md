@@ -67,7 +67,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 
 * [Firefox](https://www.mozilla.org/en-US/firefox/) - Browser.
 * [iTerm2 Beta](https://www.iterm2.com/downloads.html) - Terminal.
-* [Itsyscal](https://www.mowglii.com/itsycal/) - Menu bar calendar.
+* [Itsycal](https://www.mowglii.com/itsycal/) - Menu bar calendar.
 * [Setapp](https://setapp.com/):
   * [Paste](https://pasteapp.me/) - Clipboard manager.
   * [BetterTouchTool](https://folivora.ai/) - Customize input devices + Window snapping.
