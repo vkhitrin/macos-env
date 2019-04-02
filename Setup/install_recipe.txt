@@ -27,3 +27,4 @@ brew cask install itsycal
 brew cask install krita
 brew cask install tunnelblick
 brew cask install blue-jeans
+brew caks install wireshark

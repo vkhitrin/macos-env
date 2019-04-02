@@ -27,3 +27,4 @@ brew cask install itsycal
 brew cask uninstall krita
 brew cask uninstall tunnelblick
 brew cask uninstall blue-jeans
+brew cask uninstall wireshark
