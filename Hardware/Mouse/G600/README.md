@@ -11,13 +11,13 @@ Using inbuilt memory in order to program buttons:
 |M05|   Right     | Control+Right(⌃→)     |
 |M06|   G-Shift   |   G-Shift             |
 |M07| Unassigned  | Unassigned            |
-|M08| Unassigned  | Unassigned            |
+|M08| Screenshot to Clpboard(⌃⇧⌘4)        | Unassigned            |
 |M09| Copy(⌘C)    | Spotlight (⌘Space)    |
 |M10| Paste(⌘V)   | Shift+Command+V (⇧⌘V) |
 |M11| Cut(⌘X)     | Mission Control (⌃↑)  |
 |M12| Delete      | Unassigned            |
 |M13| Return      | Unassigned            |
-|M14| Unassigned  | Unassigned            |
+|M14| Space       | Unassigned            |
 |M15| Unassigned  | Unassigned            |
 |M16| Unassigned  | Unassigned            |
 |M17| Unassigned  | Unassigned            |
