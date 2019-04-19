@@ -28,3 +28,5 @@ brew cask uninstall krita
 brew cask uninstall tunnelblick
 brew cask uninstall blue-jeans
 brew cask uninstall wireshark
+brew cask uninstall avibrazil-rdm
+brew cask uninstall khanhas/tap/spicetify-cli
