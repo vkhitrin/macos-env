@@ -32,8 +32,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 
 * [git](https://git-scm.com/) - Version control tool.
 * [brew](https://brew.sh/) - Package manager for macOS.
-* [hh](https://github.com/dvorka/hstr) - History prompt in bash.
-* [gbt](https://github.com/jtyr/gbt) - Prompt bullet train for bash.
+* [hstr](https://github.com/dvorka/hstr) - History prompt in bash.
 * bash-completion - Auto completion for bash.
 * [bash-sensible](https://github.com/mrzool/bash-sensible) - Bash enhancements.
 * [nvim](https://github.com/neovim/neovim) - NeoVim.
@@ -67,6 +66,7 @@ In order to uninstall dot files and CLI utilities, use `make uninstall`.
 
 * [Firefox](https://www.mozilla.org/en-US/firefox/) - Browser.
 * [iTerm2 Beta](https://www.iterm2.com/downloads.html) - Terminal.
+* [Hyper Canary](https://hyper.is/) - Terminal.
 * [Itsycal](https://www.mowglii.com/itsycal/) - Menu bar calendar.
 * [Setapp](https://setapp.com/):
   * [Paste](https://pasteapp.me/) - Clipboard manager.

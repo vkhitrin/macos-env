@@ -2,8 +2,6 @@ brew untap homebrew/cask-versions
 brew remove bash-completion
 brew remove git
 brew remove hh
-brew untap jtyr/repo
-brew remove gbt
 brew remove neovim
 brew remove exa
 brew remove git-review
@@ -20,6 +18,7 @@ brew remove jq
 brew cask uninstall docker
 brew cask uninstall keepassxc-beta
 brew cask uninstall iterm2-nightly
+brew cask uninstall hyper-canary
 brew cask uninstall spotify
 brew cask uninstall notion
 brew cask uninstall firefox

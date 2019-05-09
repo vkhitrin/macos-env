@@ -1,0 +1,2 @@
+# Set PS1 Prompt
+PS1='\u  \w '
