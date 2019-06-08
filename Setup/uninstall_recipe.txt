@@ -7,7 +7,7 @@ brew remove exa
 brew remove git-review
 brew remove fpp
 brew remove ipmitool
-pip uninstall --user -y buser mackup
+brew remove mackup
 brew remove ipcalc
 brew remove nodejs
 brew remove lighttpd
@@ -15,17 +15,16 @@ brew remove ag
 brew remove tmux
 brew remove bat
 brew remove jq
+brew remove khanhas/tap/spicetify-cli
+brew remove mpv
 brew cask uninstall docker
-brew cask uninstall keepassxc-beta
+brew cask uninstall keepassxc
 brew cask uninstall iterm2-nightly
-brew cask uninstall hyper-canary
 brew cask uninstall spotify
 brew cask uninstall notion
 brew cask uninstall firefox
 brew cask install itsycal
 brew cask uninstall krita
 brew cask uninstall tunnelblick
-brew cask uninstall blue-jeans
 brew cask uninstall wireshark
 brew cask uninstall avibrazil-rdm
-brew cask uninstall khanhas/tap/spicetify-cli
