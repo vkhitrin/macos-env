@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 export PATH=/usr/local/sbin:$PATH
 
 # Source bash-completion
-[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion 
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
 # Source sensible-bash
 [ -f $HOME/.config/assets/sensible.bash ] && source $HOME/.config/assets/sensible.bash > /dev/null 2>/dev/null
@@ -22,3 +22,6 @@ export EDITOR && export VISUAL=$EDITOR
 
 # Source history enhancements
 [ -f $HOME/.config/assets/hstr ] && source $HOME/.config/assets/hstr
+
+# Activate pyenv if present
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv init -)"; fi

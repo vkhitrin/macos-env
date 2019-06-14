@@ -1,6 +1,5 @@
 brew untap homebrew/cask-versions
 brew remove bash-completion
-brew remove git
 brew remove hh
 brew remove neovim
 brew remove exa
@@ -17,6 +16,8 @@ brew remove bat
 brew remove jq
 brew remove khanhas/tap/spicetify-cli
 brew remove mpv
+brew remove pyenv
+brew remove pyenv-virtualenv
 brew cask uninstall docker
 brew cask uninstall keepassxc
 brew cask uninstall iterm2-nightly
@@ -28,3 +29,5 @@ brew cask uninstall krita
 brew cask uninstall tunnelblick
 brew cask uninstall wireshark
 brew cask uninstall avibrazil-rdm
+brew cask uninstall visual-studio-code-insiders
+brew cask uninstall monitorcontrol
