@@ -31,3 +31,4 @@ brew cask uninstall wireshark
 brew cask uninstall avibrazil-rdm
 brew cask uninstall visual-studio-code-insiders
 brew cask uninstall monitorcontrol
+brew cask uninstall ghost
