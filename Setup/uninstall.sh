@@ -1,6 +1,6 @@
 # Function which prints an error message and then returns exit code 1
 function error_exit {
-    echo "$1" >&2 
+    echo "$1" >&2
     exit "${2:-1}"
 }
 
@@ -25,6 +25,5 @@ done <./Setup/uninstall_recipe.txt
 [ -d ~/.local/share/nvim ] && rm -rf ~/.local/share/nvim
 
 # Restore from backup if exists
-[ -f ~/.bashrc.bk ] && mv ~/.bashrc.bk ~/.bashrc
-[ -f ~/.bash_profile.bk ] && mv ~/.bash_profile.bk ~/.bash_profile
+[ -f ~/.zshrc.bk ] && mv ~/.zshrc.bk ~/.zshrc
 [ -f ~/.tmux.conf.bk ] && mv ~/.tmux.conf.bk ~/.tmux.conf

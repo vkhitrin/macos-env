@@ -1,6 +1,6 @@
 # Function which prints an error message and then returns exit code 1
 function error_exit {
-    echo "$1" >&2 
+    echo "$1" >&2
     exit "${2:-1}"
 }
 
@@ -26,9 +26,8 @@ done <./Setup/install_recipe.txt
 			  		   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || error_exit "Failed to download Vim Plug"
 
 # Backup current dotfiles
-[ -f ~/.bashrc ] && cp ~/.bashrc ~/.bashrc.bk
-[ -f ~/.bash_profile ] && cp ~/.bash_profile ~/.bash_profile.bk
+[ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 [ -f ~/.tmux.conf ] && cp ~/.tmux.conf ~/.tmux.conf.bk
 
 # Copy dotfiles to home directory
-cp -r -f .bashrc .bash_profile .config .tmux.conf ~
+cp -r -f .zshrc .config .tmux.conf ~

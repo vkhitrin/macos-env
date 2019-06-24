@@ -1,5 +1,6 @@
 brew tap homebrew/cask-versions
-brew install bash-completion
+brew install zsh-completion
+brew install zsh-autosuggestions
 brew install git
 brew install hh
 brew install neovim
