@@ -2,7 +2,7 @@
 
 ## If exa is installed, 'use' it instead of ls
 if [[ $(which exa) ]] 2>/dev/null; then
-    alias ls='exa --header --group --accessed --modified --created --links --inode --blocks --header'
+    alias ls='lsd'
     alias ll='ls --long'
 else
     alias ls='ls -hG'
