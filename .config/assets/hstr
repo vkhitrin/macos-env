@@ -1,6 +1,4 @@
 # History enhancements
-export HISTFILE=~/.zsh_history  # ensure history file visibility
-export HSTR_CONFIG=hicolor      # get more colors
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=1000

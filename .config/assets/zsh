@@ -6,3 +6,10 @@ zstyle ':completion:*' format '%d'
 zstyle ':completion:*:warnings' format 'no completion'
 # Group completion
 zstyle ':completion:*' group-name ''
+# Activate zplug
+if [ -d /usr/local/opt/zplug ];then
+    export ZPLUG_HOME=/usr/local/opt/zplug
+    source $ZPLUG_HOME/init.zsh
+fi
+# Set prompt
+PS1='%B%F{cyan}❯%f%F{magenta}❯%f%F{yellow}❯%f%b%\ '
