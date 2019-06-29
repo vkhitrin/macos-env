@@ -1,0 +1,8 @@
+# Add tab highlight
+zstyle ':completion:*' menu select
+# Add completion format
+zstyle ':completion:*' format '%d'
+# Add completion warning
+zstyle ':completion:*:warnings' format 'no completion'
+# Group completion
+zstyle ':completion:*' group-name ''

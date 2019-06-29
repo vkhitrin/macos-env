@@ -12,6 +12,9 @@ export PATH=/usr/local/sbin:$PATH
 # Source zsh-autosuggestions
 [ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Source zsh tweaks
+[ -f $HOME/.config/assets/zsh ] && source $HOME/.config/assets/zsh
+
 # Source hstr
 [ -f $HOME/.config/assets/hstr ] && source $HOME/.config/assets/hstr
 
