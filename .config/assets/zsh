@@ -1,9 +1,11 @@
 # Add tab highlight
 zstyle ':completion:*' menu select
+# Add zsh case-insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # Add completion format
-zstyle ':completion:*' format '%d'
+zstyle ':completion:*' format '%F{green}%d »%f'
 # Add completion warning
-zstyle ':completion:*:warnings' format 'no completion'
+zstyle ':completion:*:warnings' format '%F{red}no completion%f'
 # Group completion
 zstyle ':completion:*' group-name ''
 # Activate zplug

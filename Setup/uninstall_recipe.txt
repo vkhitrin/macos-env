@@ -1,6 +1,7 @@
 brew untap homebrew/cask-versions
 brew remove zsh-completion
 brew remove zsh-autosuggestions
+brew remove zsh-syntax-highlighting
 brew remove hh
 brew remove neovim
 brew remove lsd

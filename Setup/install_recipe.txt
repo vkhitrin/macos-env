@@ -1,6 +1,7 @@
 brew tap homebrew/cask-versions
 brew install zsh-completion
 brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 brew install git
 brew install hh
 brew install neovim

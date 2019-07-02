@@ -25,3 +25,6 @@ export EDITOR && export VISUAL=$EDITOR
 
 # Activate pyenv if present
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Source zsh-syntax-highlighting
+[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
