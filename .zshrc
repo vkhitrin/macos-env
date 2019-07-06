@@ -18,9 +18,12 @@ export PATH=/usr/local/sbin:$PATH
 # Source hstr
 [ -f $HOME/.config/assets/hstr ] && source $HOME/.config/assets/hstr
 
-# Editor Discovery
-which vim > /dev/null 2>&1 && alias vi='vim' && EDITOR="vim"
-which nvim > /dev/null 2>&1 && alias vim='nvim' && EDITOR="nvim"
+# Terminal Editor Discovery
+which vim > /dev/null 2>&1 && alias vi='vim'
+which nvim > /dev/null 2>&1 && alias vim='nvim'
+
+# Set default editor
+EDITOR='code --wait'
 export EDITOR && export VISUAL=$EDITOR
 
 # Activate pyenv if present

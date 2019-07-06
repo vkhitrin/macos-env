@@ -17,9 +17,6 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 echo "Uninstalling brew taps/casks:"
 brew bundle --file=./Setup/Brewfile cleanup --force
 
-# Remove Vim Plug
-[ -d ~/.local/share/nvim ] && rm -rf ~/.local/share/nvim
-
 # Restore from backup if exists
 [ -f ~/.zshrc.bk ] && mv ~/.zshrc.bk ~/.zshrc
 [ -f ~/.tmux.conf.bk ] && mv ~/.tmux.conf.bk ~/.tmux.conf

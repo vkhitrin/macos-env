@@ -17,10 +17,6 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 echo "Installing brew taps/casks:"
 brew bundle --file=./Setup/Brewfile
 
-# Download Vim Plug
-[ -d ~/.local/share/nvim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-			  		   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || error_exit "Failed to download Vim Plug"
-
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 [ -f ~/.tmux.conf ] && cp ~/.tmux.conf ~/.tmux.conf.bk
