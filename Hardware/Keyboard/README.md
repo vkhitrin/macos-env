@@ -1,4 +1,4 @@
-# Mouse
+# Keyboard
 
 List of keyboard configurations.
 
