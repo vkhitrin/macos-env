@@ -20,3 +20,10 @@ brew bundle --file=./Setup/Brewfile cleanup --force
 # Restore from backup if exists
 [ -f ~/.zshrc.bk ] && mv ~/.zshrc.bk ~/.zshrc
 [ -f ~/.tmux.conf.bk ] && mv ~/.tmux.conf.bk ~/.tmux.conf
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Uninstall defaults
+bash ./Setup/macos_defaults.sh uninstall

@@ -1,8 +1,10 @@
 # Personal macOS dotfiles + tools used that are part of my workflow
 
-Using macOS Mojave 10.14.5 on Desktop
+**Note:** The files in this repo are relevant to my personal workflow!
 
-Using macOS Mojave 10.14.5 on Laptop
+Using macOS Mojave 10.15 on Desktop
+
+Using macOS Mojave 10.15 on Laptop
 
 ## Mackup vs Git
 

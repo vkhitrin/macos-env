@@ -23,3 +23,12 @@ brew bundle --file=./Setup/Brewfile
 
 # Copy dotfiles to home directory
 cp -r -f .zshrc .config .tmux.conf ~
+
+# Apply defaults to applications
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Install defaults
+bash ./Setup/macos_defaults.sh install
