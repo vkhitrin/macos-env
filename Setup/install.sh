@@ -19,10 +19,9 @@ brew bundle --file=./Setup/Brewfile
 
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
-[ -f ~/.tmux.conf ] && cp ~/.tmux.conf ~/.tmux.conf.bk
 
 # Copy dotfiles to home directory
-cp -r -f .zshrc .config .tmux.conf ~
+cp -r -f .zshrc .config ~
 
 # Apply defaults to applications
 

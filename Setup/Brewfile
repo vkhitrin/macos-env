@@ -16,7 +16,6 @@ brew "ipcalc"
 brew "ipmitool"
 brew "jq"
 brew "lighttpd", restart_service: true
-brew "lsd"
 brew "mackup"
 brew "neovim"
 brew "node"

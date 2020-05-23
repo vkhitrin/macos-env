@@ -1,28 +1,11 @@
 # Aliases
 
-## If exa is installed, 'use' it instead of ls
-if [[ $(which exa) ]] 2>/dev/null; then
-    alias ls='lsd'
-    alias ll='ls --long'
-else
-    alias ls='ls -hG'
-    alias ll='ls -l'
-fi
-
 ## If bat is installed, 'use' it instead of cat
 if [[ $(which bat) ]] 2>/dev/null; then
     alias cat='bat'
 fi
 
-## If CloudMounter is mounting OneDrive, create an alias
-[[ -d ~/.CMVolumes/OneDrive/ ]] && alias onedrive='cd ~/.CMVolumes/OneDrive/'
-## If CloudMounter is mounting Personal Google Drive, create an alias
-[[ -d ~/.CMVolumes/Personal\ GDrive/ ]] && alias googledrivepersonal='cd ~/.CMVolumes/Personal\ GDrive/'
-## If CloudMounter is mounting Work Google Drive, create an alias
-[[ -d ~/.CMVolumes/Work\ GDrive/ ]] && alias googledrivework='cd ~/.CMVolumes/Work\ GDrive/'
-## If KeePassxc is installed, use it's CLI tool
-[[ -f /Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli ]] && alias keepassxc-cli='/Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli'
-
+alias ll='ls -l'
 alias grep='grep --color'
 alias less='less -rf'
 alias mv='mv -i'
