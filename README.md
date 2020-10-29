@@ -2,9 +2,7 @@
 
 **Note:** The files in this repo are relevant to my personal workflow!
 
-Using macOS Mojave 10.15 on Desktop
-
-Using macOS Mojave 10.15 on Laptop
+Using macOS Big Sur 11 on Laptop
 
 ## Mackup vs Git
 
@@ -16,21 +14,9 @@ Application configuration are more 'static' as a part of my workflow and they're
 
 ## Installation
 
-**Note:** Currently a simple install/uninstall scripts are present, still WIP.
-
-**Note:** All applications listed below will be installed.
-
-**Note:** Will run only on macOS.
-
-**Note:** Doesn't download neovim plugins.
-
 In order to install dot files and CLI utilities, use `make install`.
 
 In order to uninstall dot files and CLI utilities, use `make uninstall`.
-
-## Applications/CLI
-
-As per now removed current list of applications/CLI tools I use, refer to in
 
 ## Hardware
 

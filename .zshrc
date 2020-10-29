@@ -23,7 +23,7 @@ which vim > /dev/null 2>&1 && alias vi='vim'
 which nvim > /dev/null 2>&1 && alias vim='nvim'
 
 # Set default editor
-EDITOR='code --wait'
+EDITOR='subl --wait'
 export EDITOR && export VISUAL=$EDITOR
 
 # Activate pyenv if present
