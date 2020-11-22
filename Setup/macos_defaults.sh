@@ -8,6 +8,9 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.screencapture disable-shadow -bool true
     defaults write com.apple.finder AppleShowAllFiles TRUE
     defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+    defaults write com.apple.Accessibility KeyRepeatDelay "0.25"
+    defaults write com.apple.Accessibility KeyRepeatEnabled 1
+    defaults write com.apple.Accessibility "0.03333333299999999"
     echo "Restarting Finder"
     killall Finder
 elif [[ $ACTION == 'uninstall' ]]; then
