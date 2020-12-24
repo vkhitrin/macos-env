@@ -31,3 +31,21 @@ osascript -e 'tell application "System Preferences" to quit'
 
 # Install defaults
 bash ./Setup/macos_defaults.sh install
+
+# Execute apple script
+bash ./Setup/apple_script.sh install
+
+# Install pip
+easy_install-3.9 pip
+
+# Install mackup from PyPI
+pip install mackup
+
+# Copy mackup config file
+cp .mackup.cfg ~/.mackup.cfg
+
+# Copy mackup applications config file
+cp -r .mackup ~/.mackup
+
+# Restore using mackup
+mackup -f restore

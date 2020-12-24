@@ -27,3 +27,12 @@ osascript -e 'tell application "System Preferences" to quit'
 
 # Uninstall defaults
 bash ./Setup/macos_defaults.sh uninstall
+
+# Execute apple script
+bash ./Setup/apple_script.sh uninstall
+
+# Remove mackup config file
+rm -f ~/.mackup.cfg
+
+# Remove mackup applications config file
+rm -rf .mackup ~/.mackup
