@@ -45,7 +45,7 @@ pip install mackup
 cp .mackup.cfg ~/.mackup.cfg
 
 # Copy mackup applications config file
-cp -r .mackup ~/.mackup
+rm -rf ~/.mackup; cp -r .mackup ~/.mackup
 
 # Restore using mackup
 mackup -f restore
