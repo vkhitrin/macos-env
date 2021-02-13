@@ -13,5 +13,7 @@ if [ -d /usr/local/opt/zplug ];then
     export ZPLUG_HOME=/usr/local/opt/zplug
     source $ZPLUG_HOME/init.zsh
 fi
+# Source zsh keybindings
+[ -f $HOME/.config/assets/zsh_keybindings ] && source $HOME/.config/assets/zsh_keybindings
 # Set prompt
 PS1='%B%F{cyan}❯%f%F{magenta}❯%f%F{yellow}❯%f%b%\ '

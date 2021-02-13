@@ -39,7 +39,7 @@ bash ./Setup/apple_script.sh install
 easy_install-3.9 pip
 
 # Install mackup from PyPI
-pip install mackup
+pip3 install mackup
 
 # Copy mackup config file
 cp .mackup.cfg ~/.mackup.cfg
