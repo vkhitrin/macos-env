@@ -35,12 +35,6 @@ bash ./Setup/macos_defaults.sh install
 # Execute apple script
 bash ./Setup/apple_script.sh install
 
-# Install pip
-easy_install-3.9 pip
-
-# Install mackup from PyPI
-pip3 install mackup
-
 # Copy mackup config file
 cp .mackup.cfg ~/.mackup.cfg
 

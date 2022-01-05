@@ -1,8 +1,8 @@
 # Aliases
 
-## If bat is installed, 'use' it instead of cat
-if [[ $(which bat) ]] 2>/dev/null; then
-    alias cat='bat'
+## If ggrep is installed, 'use' it instead of grep
+if [[ $(which ggrep) ]] 2>/dev/null; then
+    alias grep='ggrep'
 fi
 
 alias ll='ls -l'

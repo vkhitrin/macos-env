@@ -2,7 +2,7 @@
 
 **Note:** The files in this repo are relevant to my personal workflow!
 
-Using macOS Big Sur 11 on Laptop
+Using macOS Big Monterey 12 on Laptop
 
 ## Mackup vs Git
 
