@@ -2,12 +2,14 @@
 
 ## If ggrep is installed, 'use' it instead of grep
 if [[ $(which ggrep) ]] 2>/dev/null; then
-    alias grep='ggrep'
+    alias grep='ggrep --color'
+else
+    alias grep='grep --color'
 fi
 
 alias ll='ls -l'
-alias grep='grep --color'
 alias less='less -rf'
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
+alias history='fc -l 1'
