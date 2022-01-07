@@ -17,6 +17,10 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 echo "Installing brew taps/casks:"
 brew bundle --file=./Setup/Brewfile
 
+# Install podman-compose
+echo "Installing podman-compose via pip3"
+pip3 install podman-compose
+
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 
