@@ -18,6 +18,10 @@ In order to install dot files and CLI utilities, use `make install`.
 
 In order to uninstall dot files and CLI utilities, use `make uninstall`.
 
+In order to bootstrap Fedora CoreOS VM (to be used for podman), use `make bootstrap-lima`.
+
+In order to teardown Fedora CoreOS VM, use `make teardown-lima`.
+
 ## Hardware
 
 Refer to [Hardware README](/Hardware).
