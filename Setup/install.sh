@@ -21,6 +21,10 @@ brew bundle --file=./Setup/Brewfile
 echo "Installing podman-compose via pip3"
 pip3 install podman-compose
 
+# Add completions to tools that are not shipped by zsh-completions
+[ -f /usr/local/share/zsh-completions/_podman ] || podman completion zsh -f /usr/local/share/zsh-completions/_podman
+[ -f /usr/local/share/zsh-completions/_limactl ] || limactl completion zsh > /usr/local/share/zsh-completions/_limactl
+
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 

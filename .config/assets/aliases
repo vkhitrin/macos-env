@@ -7,6 +7,10 @@ else
     alias grep='grep --color'
 fi
 
+# Terminal Editor Discovery
+which vim > /dev/null 2>&1 && alias vi='vim'
+which nvim > /dev/null 2>&1 && alias vim='nvim'
+
 alias ll='ls -l'
 alias less='less -rf'
 alias mv='mv -i'
