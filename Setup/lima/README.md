@@ -1,7 +1,7 @@
 # lima
 
 **NOTE:** lima doesn't support CoreOS based distributions due to
-it not supporting ignition and only supporting cloud-init.
+it not supporting `ignition` and only supporting `cloud-init`.
 
 [lima](https://github.com/lima-vm/lima) is a tool to launch Linux
 virtual machines on macOS using QEMU.
@@ -33,21 +33,39 @@ achieve everything needed with manual workarounds.
 ### Prerequisites
 
 In order to boot a CoreOS instance the following dependencies must be satisfied:
+
+* `bash` >= 3.5.3
 * [libguestfs](https://libguestfs.org/) - Allows to access and modify tools.
 * [macFUSE](https://osxfuse.github.io/) - Support for FUSE like filesystems on macOS.
-* [sshfs](https://github.com/libfuse/sshfs) - Allow to mount files via SSH.
 * Allow SSH connections to macOS.
 
 ### Workarounds
 
 There are several workarounds needed for macOS:
+
 * libguestfs is not natively present in brew. A user has compiled and provided
 libguestfs for macOS [here](https://github.com/Amar1729/homebrew-libguestfs).
 * Supplied appliance in amar1729/libguestfs is old, it should be replaced with a
 newer appliance like `https://download.libguestfs.org/binaries/appliance/appliance-1.46.0.tar.xz`.
 * macfuse should be installed in order to support FUSE file systems.
-* sshfs is not part of homebrew anymore. It can be downloaded from [here](https://github.com/gromgit/homebrew-fuse).
-* Generate a compatible podman SSH key in order to authenticate with podman remotely.
+* Generate a compatible podman SSH key in order to [authenticate](https://github.com/containers/podman/blob/main/troubleshooting.md#26-exec-container-process-binsh-exec-format-error-or-another-binary-than-binsh)
+with podman remotely.
 
 All those workarounds are needed to modify the Fedora CoreOS image in order to
 allow to use it as a podman host.
+
+## Usage
+
+In order to start a Fedora CoreOS VM using lima run `make bootstrap-lima`
+from root directory of this repository or run script `bootstrap.sh` from
+this directory.
+
+In order to delete the VM run `make teardown-lima` from root directory of this
+repository or run script `teardown.sh` from this directory.
+
+Variables can be provided in order to modify default behavior of the scripts,
+example:
+
+```bash
+IGNITION_FILE=/path/to/directory/config.ign make bootstrap-lima
+```

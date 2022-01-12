@@ -1,56 +1,31 @@
 ---
 # This example requires Lima v0.8.0 or later
 
-# Arch: "default", "x86_64", "aarch64".
-# "default" corresponds to the host architecture.
 arch: "default"
-
-# An image must support systemd and cloud-init.
 images:
   - location: "/tmp/fedora-coreos-35.20211215.3.0-qemu.x86_64.qcow2"
     arch: "x86_64"
-
-# CPUs
-# Default: 4
 cpus: 2
-
-# Memory size
-# Default: "4GiB"
 memory: "2GiB"
-
-# Disk size
-# Default: "100GiB"
-disk: "20GiB"
-
-# These are not configured by lima currently
+disk: "60GiB"
 mounts:
   - location: "~"
     writable: false
   - location: "/tmp/lima"
     writable: true
-
 containerd:
   system: false
   user: false
-
 ssh:
   localPort: 60906
-
-# Did not get this to work
-portForwards:
-  - guestSocket: "/run/podman/podman.sock"
-    hostSocket: "{{.Dir}}/sock/podman.sock"
-
+# Did not get this to work properly, socket is created but can not communicate with it
+# portForwards:
+  # - guestSocket: "/run/podman/podman.sock"
+    # hostSocket: "{{.Dir}}/sock/podman.sock"
+firmware:
+  legacyBIOS: true
+video:
+  display: "none"
 message: |
   To run `podman` on the host:
   podman system connection add -p 60906 --identity ~/.ssh/podman podman root@127.0.0.1
-
-firmware:
-  # Use legacy BIOS instead of UEFI.
-  # Default: false
-  legacyBIOS: true
-
-video:
-  # QEMU display, e.g., "none", "cocoa", "sdl", "gtk".
-  # Default: "none"
-  display: "none"
