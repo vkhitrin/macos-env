@@ -13,3 +13,7 @@ if [[ -d /usr/local/share/zsh-completions ]];then
     autoload -U compinit promptinit
     compinit
 fi
+
+# Enable pure theme
+autoload -U promptinit; promptinit
+prompt pure
