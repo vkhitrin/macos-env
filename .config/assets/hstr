@@ -13,7 +13,12 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
-# Using hstr if it's intalled
-if [[ $(which hstr) ]];then
-    bindkey -s "\C-r" "\eqhstr\n"     # bind hstr to Ctrl-r (for Vi mode check doc)
+# Using mcfly if it is installed
+if [[ $(which mcfly) ]];then
+    export MCFLY_LIGHT=TRUE
+    export MCFLY_FUZZY=2
+    export MCFLY_RESULTS=50
+    export MCFLY_RESULTS_SORT=LAST_RUN
+    export MCFLY_DELETE_WITHOUT_CONFIRM=True
+    eval "$(mcfly init zsh)"
 fi
