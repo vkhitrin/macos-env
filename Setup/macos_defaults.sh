@@ -11,6 +11,7 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.Accessibility KeyRepeatDelay "0.25"
     defaults write com.apple.Accessibility KeyRepeatEnabled 1
     defaults write com.apple.Accessibility "0.03333333299999999"
+    defaults  write  net.tunnelblick.tunnelblick  doNotLaunchOnLogin  -bool  yes
     echo "Restarting Finder"
     killall Finder
 elif [[ $ACTION == 'uninstall' ]]; then
@@ -18,6 +19,7 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.apple.screencapture disable-shadow
     defaults delete com.apple.finder AppleShowAllFiles
     defaults write com.apple.desktopservices DSDontWriteNetworkStores false
+    defaults  write  net.tunnelblick.tunnelblick  doNotLaunchOnLogin
     echo "Restarting Finder"
     killall Finder
 else

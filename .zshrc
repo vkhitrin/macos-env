@@ -8,12 +8,14 @@
 [ -f $HOME/.config/assets/hstr ] && source $HOME/.config/assets/hstr
 
 # Source zsh-completion
-if [[ -d /usr/local/share/zsh-completions ]];then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-    autoload -U compinit promptinit
+if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
+    FPATH="$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    autoload -Uz compinit promptipnit
     compinit
 fi
 
-# Enable pure theme
-autoload -U promptinit; promptinit
-prompt pure
+# Enable powerlevel10k theme
+if [[ -f "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" ]];then
+    source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
+    source ~/.p10k.zsh
+fi

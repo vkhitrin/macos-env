@@ -22,14 +22,14 @@ echo "Installing podman-compose via pip3"
 pip3 install podman-compose
 
 # Add completions to tools that are not shipped by zsh-completions
-[ -f /usr/local/share/zsh-completions/_podman ] || podman completion zsh -f /usr/local/share/zsh-completions/_podman
-[ -f /usr/local/share/zsh-completions/_limactl ] || limactl completion zsh > /usr/local/share/zsh-completions/_limactl
+[ -f "$(brew --prefix)/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
+[ -f "$(brew --prefix)/share/zsh-completions/_limactl" ] || limactl completion zsh > /opt/homebrew/share/zsh-completions/_limactl
 
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 
 # Copy dotfiles to home directory
-cp -r -f .zshrc .config ~
+cp -r -f .zshenv .zshrc .config .p10k.zsh ~
 
 # Apply defaults to applications
 
@@ -51,3 +51,5 @@ rm -rf ~/.mackup; cp -r .mackup ~/.mackup
 
 # Restore using mackup
 mackup -f restore
+
+echo "Please run 'compaudit | xargs chmod g-w' if needed."
