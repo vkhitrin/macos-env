@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
 # Function which prints an error message and then returns exit code 1
 function error_exit {
     echo "$1" >&2
@@ -14,8 +18,14 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 
 # Verify existence of Brewfile
 [ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
-echo "Uninstalling brew taps/casks:"
+echo "Uninstalling brew taps/casks/apps:"
 brew bundle --file=./Setup/Brewfile cleanup --force
+
+# Uninstall amphetamine enhancer
+if [[ $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
+    rm -rf /Applications/Amphetamine\ Enhancer/Amphetamine\ Enhancer.app
+fi
+
 
 # Restore from backup if exists
 [ -f ~/.zshrc.bk ] && mv ~/.zshrc.bk ~/.zshrc

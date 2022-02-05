@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
 # Function which prints an error message and then returns exit code 1
 function error_exit {
     echo "$1" >&2
@@ -14,8 +18,27 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 
 # Verify existence of Brewfile
 [ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
-echo "Installing brew taps/casks:"
+echo "Installing brew taps/casks/apps:"
 brew bundle --file=./Setup/Brewfile
+
+# Install libguestfs from local Formula
+# [ -f ./Setup/homebrew/libguestfs.rb ] || error_exit "No libguestfs formula found"
+# echo "Copying portableendian.h to homebrew"
+# cp ./Setup/homebrew/portableendian.h /opt/homebrew/include/
+# echo "Installing libguestfs"
+# brew install -v --formula ./Setup/homebrew/libguestfs.rb
+
+# Install amphetamine enhancer
+if [[ ! $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
+    wget https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg -O /tmp/amphetamine_enhancer.dmg
+    hdiutil attach /tmp/amphetamine_enhancer.dmg
+    cp -R /Volumes/Amphetamine\ Enhancer/Amphetamine\ Enhancer.app /Applications
+    hdiutil unmount /Volumes/Amphetamine\ Enhancer
+fi
+
+# Upgrade pip
+echo "Upgrade pip"
+pip3 install -U pip
 
 # Install podman-compose
 echo "Installing podman-compose via pip3"
@@ -29,7 +52,7 @@ pip3 install podman-compose
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 
 # Copy dotfiles to home directory
-cp -r -f .zshenv .zshrc .config .p10k.zsh ~
+cp -r -f .zshenv .zshrc .config ~
 
 # Apply defaults to applications
 
