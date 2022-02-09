@@ -26,6 +26,8 @@ if [[ $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
     rm -rf /Applications/Amphetamine\ Enhancer/Amphetamine\ Enhancer.app
 fi
 
+echo "Cleanup brew"
+brew cleanup;brew autoremove
 
 # Restore from backup if exists
 [ -f ~/.zshrc.bk ] && mv ~/.zshrc.bk ~/.zshrc

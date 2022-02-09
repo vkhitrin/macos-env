@@ -16,4 +16,4 @@ alias less='less -rf'
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
-alias history='fc -l 1'
+alias visudo="VISUAL='vim' sudo visudo"

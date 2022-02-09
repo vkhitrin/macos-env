@@ -28,6 +28,9 @@ brew bundle --file=./Setup/Brewfile
 # echo "Installing libguestfs"
 # brew install -v --formula ./Setup/homebrew/libguestfs.rb
 
+echo "Cleanup brew"
+brew cleanup;brew autoremove
+
 # Install amphetamine enhancer
 if [[ ! $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
     wget https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg -O /tmp/amphetamine_enhancer.dmg
