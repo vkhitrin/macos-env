@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Source aliases
 [ -f $HOME/.config/assets/aliases ] && source $HOME/.config/assets/aliases
 
@@ -13,9 +20,6 @@ if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
     autoload -Uz compinit promptipnit
     compinit
 fi
-
-# Export libguestfs appliance if required
-[ -f /opt/homebrew/opt/libguestfs/var/libguestfs-appliance ] && export LIBGUESTFS_PATH=/opt/homebrew/opt/libguestfs/var/libguestfs-appliance
 
 # Enable powerlevel10k theme
 if [[ -f "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" ]];then
