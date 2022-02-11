@@ -30,7 +30,7 @@ due to being reliant on cloud-init for bootstrapping.
 I still wish to use lima so I will be providing workarounds on how to
 achieve everything needed with manual workarounds.
 
-### Prerequisites
+### Prerequisites For Intel Based Macs
 
 In order to boot a CoreOS instance the following dependencies must be satisfied:
 
@@ -39,7 +39,7 @@ In order to boot a CoreOS instance the following dependencies must be satisfied:
 * [macFUSE](https://osxfuse.github.io/) - Support for FUSE like filesystems on macOS.
 * Allow SSH connections to macOS.
 
-### Workarounds
+### Workarounds For Intel Based Macs
 
 There are several workarounds needed for macOS:
 
@@ -53,6 +53,14 @@ with podman remotely.
 
 All those workarounds are needed to modify the Fedora CoreOS image in order to
 allow to use it as a podman host.
+
+### Workarounds For Apple Silicon Macs
+
+Sadly, I was unsuccessful in compiling libguestfs tools on Apple silicon.  
+I am using a pre-generated image that was modified on x86 host.
+
+Modified image is hosted on a private instance of s3 not accessible to outside world.  
+[bootstrap_x86.sh](./Setup/lima/bootstrap_x86.sh) script was used to generate the modified aarch64 image.
 
 ## Usage
 

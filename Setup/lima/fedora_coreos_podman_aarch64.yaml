@@ -3,8 +3,8 @@
 
 arch: "default"
 images:
-  - location: "/tmp/fedora-coreos-35.20211215.3.0-qemu.x86_64.qcow2"
-    arch: "x86_64"
+  - location: "/tmp/fedora-coreos-35.20220116.3.0-qemu.aarch64.qcow2"
+    arch: "aarch64"
 cpus: 2
 memory: "2GiB"
 disk: "60GiB"
@@ -22,10 +22,8 @@ ssh:
 # portForwards:
   # - guestSocket: "/run/podman/podman.sock"
     # hostSocket: "{{.Dir}}/sock/podman.sock"
-firmware:
-  legacyBIOS: true
 video:
   display: "none"
 message: |
   To run `podman` on the host:
-  podman system connection add -p 60906 --identity ~/.ssh/podman podman root@127.0.0.1/run/podman/podman.sock
+  podman system connection add -p 60906 --identity ~/.config/assets/Keys/podman podman root@127.0.0.1/run/podman/podman.sock

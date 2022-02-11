@@ -7,8 +7,11 @@ install:
 uninstall:
 	@./Setup/uninstall.sh
 
-bootstrap-lima:
-	@./Setup/lima/bootstrap.sh
+bootstrap-lima-x86:
+	@./Setup/lima/bootstrap_x86.sh
+
+bootstrap-lima-arm64:
+	@./Setup/lima/bootstrap_arm64.sh
 
 teardown-lima:
 	@./Setup/lima/teardown.sh
