@@ -14,8 +14,8 @@ if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
     compinit
 fi
 
-# Export libguestfs appliance if required
-[ -f /opt/homebrew/opt/libguestfs/var/libguestfs-appliance ] && export LIBGUESTFS_PATH=/opt/homebrew/opt/libguestfs/var/libguestfs-appliance
+# Source gitstatus if present
+[ -f /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh ] && source /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh
 
 # Enable powerlevel10k theme
 if [[ -f "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" ]];then
