@@ -16,8 +16,10 @@ if [[ $ACTION == 'install' ]];then
     defaults write -g PMPrintingExpandedStateForPrint -bool true
     defaults write -g PMPrintingExpandedStateForPrint2 -bool true
     defaults write -g WebContinuousSpellCheckingEnabled -boolean true
+    # TODO apply defaults based on file names in ./Setup/defaults/*
     defaults import com.if.Amphetamine ./Setup/defaults/com.if.Amphetamine.plist
     defaults import com.if.Amphetamine-Enhancer ./Setup/defaults/com.if.Amphetamine-Enhancer.plist
+    defaults import org.p0deje.Maccy ./Setup/defaults/org.p0deje.Maccy.plist
     echo "Restarting Finder"
     killall Finder
 elif [[ $ACTION == 'uninstall' ]]; then
@@ -33,6 +35,7 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults write -g WebContinuousSpellCheckingEnabled -boolean false
     defaults delete com.if.Amphetamine
     defaults delete com.if.Amphetamine-Enhancer
+    defaults delete org.p0deje.Maccy
     echo "Restarting Finder"
     killall Finder
 else

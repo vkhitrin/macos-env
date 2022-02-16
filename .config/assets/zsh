@@ -1,11 +1,15 @@
+# Source zsh-completion
+if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
+    FPATH="$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    autoload -Uz compinit promptipnit
+    compinit
+fi
+# Set word selection similar to bash
+autoload -U select-word-style
+select-word-style bash
 # Add tab highlight
 zstyle ':completion:*' menu select
 # Add zsh case-insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # Group completion
 zstyle ':completion:*' group-name ''
-# Activate zplug
-if [ -d /usr/local/opt/zplug ];then
-    export ZPLUG_HOME=/usr/local/opt/zplug
-    source $ZPLUG_HOME/init.zsh
-fi

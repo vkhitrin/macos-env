@@ -7,13 +7,6 @@
 # Source hstr
 [ -f $HOME/.config/assets/hstr ] && source $HOME/.config/assets/hstr
 
-# Source zsh-completion
-if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
-    FPATH="$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    autoload -Uz compinit promptipnit
-    compinit
-fi
-
 # Source gitstatus if present
 [ -f /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh ] && source /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh
 

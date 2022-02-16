@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeyboardShortcuts_popup</key>
+	<string>{"carbonModifiers":768,"carbonKeyCode":9}</string>
+	<key>NSNavLastRootDirectory</key>
+	<string>/Applications</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{800, 448}</string>
+	<key>NSStatusItem Visible Item-0</key>
+	<false/>
+	<key>NSWindow Frame NSNavPanelAutosaveName</key>
+	<string>3440 725 800 448 2560 0 2560 1415 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>3640 961 400 134 2560 0 2560 1415 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>3530 762 620 398 2560 0 2560 1415 </string>
+	<key>NSWindow Frame com.sindresorhus.Preferences.FrameAutosaveName</key>
+	<string>3588 550 502 527 0 0 1920 1055 </string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUHasLaunchedBefore</key>
+	<true/>
+	<key>SULastCheckTime</key>
+	<date>2022-02-07T12:14:31Z</date>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>1620038788</integer>
+	<key>WebKitDefaultFontSize</key>
+	<integer>13</integer>
+	<key>WebKitJavaEnabled</key>
+	<false/>
+	<key>WebKitJavaScriptEnabled</key>
+	<false/>
+	<key>WebKitPluginsEnabled</key>
+	<false/>
+	<key>WebKitStandardFont</key>
+	<string>-apple-system-font</string>
+	<key>WebKitUserStyleSheetEnabledPreferenceKey</key>
+	<true/>
+	<key>WebKitUserStyleSheetLocationPreferenceKey</key>
+	<string>/Applications/Maccy.app/Contents/Frameworks/Sparkle.framework/Resources/ReleaseNotesColorStyle.css</string>
+	<key>enabledPasteboardTypes</key>
+	<array>
+		<string>public.file-url</string>
+		<string>public.png</string>
+		<string>public.tiff</string>
+		<string>public.utf8-plain-text</string>
+	</array>
+	<key>hideFooter</key>
+	<false/>
+	<key>hideSearch</key>
+	<false/>
+	<key>hideTitle</key>
+	<true/>
+	<key>history</key>
+	<data>
+	YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ
+	</data>
+	<key>historySize</key>
+	<integer>999</integer>
+	<key>ignoredApps</key>
+	<array>
+		<string>com.bitwarden.desktop</string>
+	</array>
+	<key>ignoredPasteboardTypes</key>
+	<array>
+		<string>de.petermaurer.TransientPasteboardType</string>
+		<string>net.antelle.keeweb</string>
+		<string>Pasteboard generator type</string>
+		<string>com.typeit4me.clipping</string>
+		<string>com.agilebits.onepassword</string>
+	</array>
+	<key>migrations</key>
+	<dict>
+		<key>2020-02-22-history-item-add-copied-at</key>
+		<true/>
+		<key>2020-02-22-history-item-add-number-of-copies</key>
+		<true/>
+		<key>2020-04-18-switch-storage-to-core-data</key>
+		<true/>
+		<key>2020-04-25-allow-custom-ignored-types</key>
+		<true/>
+		<key>2020-06-19-use-keyboardshortcuts</key>
+		<true/>
+		<key>2020-09-01-ignore-keeweb</key>
+		<true/>
+		<key>2021-02-20-allow-to-customize-supported-types</key>
+		<true/>
+		<key>2021-06-28-add-title-to-history-item</key>
+		<true/>
+		<key>2021-10-16-remove-dynamic-pasteboard-types</key>
+		<true/>
+	</dict>
+	<key>showInStatusBar</key>
+	<false/>
+	<key>showRecentCopyInMenuBar</key>
+	<false/>
+</dict>
+</plist>
