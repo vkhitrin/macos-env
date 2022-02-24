@@ -44,8 +44,8 @@ echo "Upgrade pip"
 pip3 install -U pip
 
 # Install podman-compose
-echo "Installing podman-compose via pip3"
-pip3 install podman-compose
+echo "Installing pip package"
+pip3 install podman-compose openstacksdk python-openstackclient
 
 # Add completions to tools that are not shipped by zsh-completions
 [ -f "$(brew --prefix)/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
