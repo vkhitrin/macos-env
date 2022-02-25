@@ -19,7 +19,7 @@ which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please 
 # Verify existence of Brewfile
 [ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
 echo "Installing brew taps/casks/apps:"
-brew bundle --file=./Setup/Brewfile
+brew bundle --quiet --file=./Setup/Brewfile
 
 # Install libguestfs from local Formula
 # [ -f ./Setup/homebrew/libguestfs.rb ] || error_exit "No libguestfs formula found"
@@ -40,16 +40,20 @@ if [[ ! $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
 fi
 
 # Upgrade pip
-echo "Upgrade pip"
-pip3 install -U pip
+echo "Upgrading pip"
+pip3 install -U pip -qqq
 
 # Install podman-compose
-echo "Installing pip package"
-pip3 install podman-compose openstacksdk python-openstackclient
+echo "Installing pip packages: 'podman-compose', 'openstacksdk', 'python-openstackclient'"
+pip3 install podman-compose openstacksdk python-openstackclient -qqq
+
+# Link shipped brew completions
+brew completions link
 
 # Add completions to tools that are not shipped by zsh-completions
 [ -f "$(brew --prefix)/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
 [ -f "$(brew --prefix)/share/zsh-completions/_limactl" ] || limactl completion zsh > /opt/homebrew/share/zsh-completions/_limactl
+[ -f "$(brew --prefix)/share/zsh-completions/_oc" ] || oc completion zsh > /opt/homebrew/share/zsh-completions/_oc
 
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk

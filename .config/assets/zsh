@@ -4,6 +4,10 @@ if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
     autoload -Uz compinit promptipnit
     compinit
 fi
+
+# Defince OpenShfit CLI completion
+[ -f "$(brew --prefix)/share/zsh-completions/_oc" ] && compdef _oc oc
+
 # Set word selection similar to bash
 autoload -U select-word-style
 select-word-style bash
