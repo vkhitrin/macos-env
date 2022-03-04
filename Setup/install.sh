@@ -16,6 +16,9 @@ fi
 # Verify brew is installed
 which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
 
+# Upgrade and update brew
+brew upgrade;brew update
+
 # Verify existence of Brewfile
 [ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
 echo "Installing brew taps/casks/apps:"

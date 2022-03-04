@@ -40,6 +40,7 @@ brew "packer"
 brew "tree"
 brew "yq"
 brew "openshift-cli"
+brew "kubectl"
 cask "macfuse"
 cask "avibrazil-rdm"
 cask "deluge"
@@ -57,6 +58,8 @@ cask "whatsapp"
 cask "maccy"
 cask "sublime-merge"
 cask "signal"
+cask "google-chat-electron"
+cask "deepl"
 mas "Bitwarden", id: 1352778147
 mas "Parcel", id: 639968404
 mas "Amphetamine", id: 937984704
