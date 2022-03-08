@@ -7,6 +7,10 @@ else
     alias grep='grep --color'
 fi
 
+if [[ $(which subl) ]] 2>/dev/null; then
+    alias subl='subl --add'
+fi
+
 # Terminal Editor Discovery
 which vim > /dev/null 2>&1 && alias vi='vim'
 which nvim > /dev/null 2>&1 && alias vim='nvim'

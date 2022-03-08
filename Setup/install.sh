@@ -46,10 +46,6 @@ fi
 echo "Upgrading pip"
 pip3 install -U pip -qqq
 
-# Install podman-compose
-echo "Installing pip packages: 'podman-compose', 'openstacksdk', 'python-openstackclient'"
-pip3 install podman-compose openstacksdk python-openstackclient -qqq
-
 # Link shipped brew completions
 brew completions link
 

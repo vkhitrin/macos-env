@@ -1,12 +1,12 @@
 # Source zsh-completion
-if [[ -d "$(brew --prefix)/share/zsh-completions" ]];then
-    FPATH="$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if [[ -d "/opt/homebrew//share/zsh-completions" ]];then
+    FPATH="/opt/homebrew//share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
     autoload -Uz compinit promptipnit
     compinit
 fi
 
-# Defince OpenShfit CLI completion
-[ -f "$(brew --prefix)/share/zsh-completions/_oc" ] && compdef _oc oc
+# Define OpenShfit CLI completion
+[ -f "/opt/homebrew/share/zsh-completions/_oc" ] && compdef _oc oc
 
 # Set word selection similar to bash
 autoload -U select-word-style
