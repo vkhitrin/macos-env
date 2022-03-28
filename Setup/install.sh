@@ -42,18 +42,6 @@ if [[ ! $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
     hdiutil unmount /Volumes/Amphetamine\ Enhancer
 fi
 
-# Upgrade pip
-echo "Upgrading pip"
-pip3 install -U pip -qqq
-
-# Link shipped brew completions
-brew completions link
-
-# Add completions to tools that are not shipped by zsh-completions
-[ -f "$(brew --prefix)/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
-[ -f "$(brew --prefix)/share/zsh-completions/_limactl" ] || limactl completion zsh > /opt/homebrew/share/zsh-completions/_limactl
-[ -f "$(brew --prefix)/share/zsh-completions/_oc" ] || oc completion zsh > /opt/homebrew/share/zsh-completions/_oc
-
 # Backup current dotfiles
 [ -f ~/.zshrc ] && cp ~/.zshrc ~/.zshrc.bk
 
@@ -80,5 +68,27 @@ rm -rf ~/.mackup; cp -r .mackup ~/.mackup
 
 # Restore using mackup
 mackup -f restore
+
+# Upgrade pip
+echo "Upgrading pip and related packages"
+pip3 install -Uqqq pip neovim python-lsp-server[all] pip install rst-language-server
+
+# Link shipped brew completions
+brew completions link
+
+# Install vim-plug
+[ -f $HOME/.local/share/nvim/site/autoload/plug.vim ] || sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Add completions to tools that are not shipped by zsh-completions
+[ -f "/opt/homebrew/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
+[ -f "/opt/homebrew/share/zsh-completions/_limactl" ] || limactl completion zsh > /opt/homebrew/share/zsh-completions/_limactl
+[ -f "/opt/homebrew/share/zsh-completions/_oc" ] || oc completion zsh > /opt/homebrew/share/zsh-completions/_oc
+
+# Install local groovy-language-server
+if [[ ! -d $HOME/.local/groovy-language-server ]];then
+    git clone "https://github.com/GroovyLanguageServer/groovy-language-server.git" $HOME/.local/groovy-language-server
+    cd $HOME/.local/groovy-language-server;./gradlew build
+fi
 
 echo "Please run 'compaudit | xargs chmod g-w' if needed."

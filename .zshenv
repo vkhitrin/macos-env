@@ -9,8 +9,6 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 
 # Set default editor
-export EDITOR='subl --wait'
+export EDITOR='nvim'
 export VISUAL=$EDITOR
 
-# Set libguestfs appliance
-export LIBGUESTFS_PATH=/usr/local/Cellar/libguestfs/1.32.6/var/libguestfs-appliance
