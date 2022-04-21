@@ -26,10 +26,10 @@ end
 class Libguestfs < Formula
   desc "Set of tools for accessing and modifying virtual machine (VM) disk images"
   homepage "https://libguestfs.org/"
-  url "https://libguestfs.org/download/1.32-stable/libguestfs-1.32.6.tar.gz"
-  sha256 "bbf4e2d63a9d5968769abfe5c0b38b9e4b021b301ca0359f92dbb2838ad85321"
+  url "https://download.libguestfs.org/1.48-stable/libguestfs-1.48.0.tar.gz"
+  sha256 "1681fddedfcf484ca6deec54230330a32defbd30c2ab1f81788e252cb5d04829"
 
-  depends_on "#{@tap}/automake-1.15" => :build
+  depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
@@ -39,7 +39,10 @@ class Libguestfs < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "libvirt"
-  depends_on "pcre"
+  depends_on "pcre2"
+  depends_on "jansson"
+  depends_on "ocaml"
+  depends_on "ocaml-findlib"
   depends_on "qemu"
   depends_on "readline"
   depends_on "xz"
@@ -55,28 +58,16 @@ class Libguestfs < Formula
     depends_on "libfuse"
   end
 
-  # Since we can't build an appliance, the recommended way is to download a fixed one.
+ # Since we can't build an appliance, the recommended way is to download a fixed one.
   resource "fixed_appliance" do
     url "https://download.libguestfs.org/binaries/appliance/appliance-1.46.0.tar.xz"
     sha256 "a7550de70bf7cbe579745306e723376d57f5bdaa03cd09d5bfd6a97f00b880d8"
   end
 
   patch do
-    # Change program_name to avoid collision with gnulib
-    url "https://gist.github.com/zchee/2845dac68b8d71b6c1f5/raw/ade1096e057711ab50cf0310ceb9a19e176577d2/libguestfs-gnulib.patch"
-    sha256 "b88e85895494d29e3a0f56ef23a90673660b61cc6fdf64ae7e5fecf79546fdd0"
-  end
-
-  patch do
-    # Configure backing_file for qemu-img
-    url "https://gist.githubusercontent.com/vkhitrin/7aa3f8ebc51be4a03078e6a59507e8a5/raw/5fda8c25c317210ce1035d7d08f2e8d335a79c87/updated-qemu.patch"
-    sha256 "cf7d86cbb693df7856bd43349a807759e83caff8d8272e6caf16a98b564f6d8b"
-  end
-
-  patch do
-    # Portable endian fix
-    url "https://gist.githubusercontent.com/vkhitrin/9f44610ee529f31a6f9e58ef4d99e1e6/raw/853a041696a0c631e2bd3eb02f69c49b3b8c248e/portable_endian.patch"
-    sha256 "3c859ae56cbfecd3afbfc7e446c6afbfdcda00f7b8ccbf128e748469db352ab4"
+    # Change C library from 'error.h' to 'mach/error.h'
+    url "https://gist.githubusercontent.com/vkhitrin/2e2f4626756c7325c9bff2e86ca82a10/raw/f6d9f81964a1f07c466ccafcda9f2adf0525398f/macos_error_patch"
+    sha256 "90d0f1abee2ea98ba7f3c1bb495552d07a7ea5380d693971832528dc048752f2"
   end
 
   def install
@@ -88,6 +79,15 @@ class Libguestfs < Formula
 
     ENV["AUGEAS_CFLAGS"] = "-I#{Formula["augeas"].opt_include}"
     ENV["AUGEAS_LIBS"] = "-L#{Formula["augeas"].opt_lib}"
+
+    ENV["PCRE2_CFLAGS"] = "-I#{Formula["pcre2"].opt_include}"
+    ENV["PCRE2_LIBS"] = "-I#{Formula["pcre2"].opt_lib}"
+
+    ENV["JANSSON_CFLAGS"] = "-I#{Formula["jansson"].opt_lib}"
+    ENV["JANSSON_LIBS"] = "-I#{Formula["jansson"].opt_lib}"
+
+    ENV["HIVEX_CFLAGS"] = "-I#{Formula["hivex"].opt_lib}"
+    ENV["HIVEX_LIBS"] = "-I#{Formula["hivex"].opt_lib}"
 
     ENV["CPPFLAGS"] = "-I/opt/homebrew/include/"
     ENV["CFLAGS"] = "-std=gnu99"
@@ -108,7 +108,13 @@ class Libguestfs < Formula
       "--disable-golang",
       "--disable-python",
       "--disable-ruby",
+      "--with-distro=macos",
     ]
+
+    # Initialize opam
+    system "opam init"
+    # Install required OCAML library
+    system "opam install stdlib-shims"
 
     system "./configure", "--disable-dependency-tracking",
            "--disable-silent-rules",

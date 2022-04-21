@@ -3,11 +3,11 @@
 
 arch: "default"
 images:
-  - location: "/tmp/personal_macos_fedora-coreos-35.20220116.3.0-qemu.aarch64.qcow2"
+  - location: "/tmp/personal_macos_fedora-coreos-36.20220325.1.0-qemu.aarch64.qcow2"
     arch: "aarch64"
 cpus: 2
-memory: "2GiB"
-disk: "60GiB"
+memory: "8GiB"
+disk: "160GiB"
 mounts:
   - location: "~"
     writable: false

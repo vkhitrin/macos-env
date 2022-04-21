@@ -36,10 +36,19 @@ brew cleanup;brew autoremove
 
 # Install amphetamine enhancer
 if [[ ! $(ls -l /Applications | grep 'Amphetamine Enhancer') ]]; then
+    echo "Downloading and installing Amphetamine Enhancer"
     wget https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg -O /tmp/amphetamine_enhancer.dmg
     hdiutil attach /tmp/amphetamine_enhancer.dmg
     cp -R /Volumes/Amphetamine\ Enhancer/Amphetamine\ Enhancer.app /Applications
     hdiutil unmount /Volumes/Amphetamine\ Enhancer
+fi
+
+# Install chipmunk log analyzer & viewer
+if [[ ! $(ls -l /Applications | grep 'chipmunk') ]]; then
+    echo "Downloading chipmunk (log analyzer & viewer)"
+    wget https://github.com/esrlabs/chipmunk/releases/download/2.26.3/chipmunk@2.26.3-darwin-portable.tgz -O /tmp/chipmunk-portable.tgz
+    tar -xvf /tmp/chipmunk-portable.tgz -C /tmp/
+    cp -R /tmp/chipmunk.app /Applications
 fi
 
 # Backup current dotfiles
