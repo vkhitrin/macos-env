@@ -40,7 +40,6 @@ brew "tree"
 brew "fzf"
 brew "yq"
 brew "kubectl"
-brew "asdf"
 brew "openstackclient"
 brew "mupdf"
 brew "neovim"
@@ -53,6 +52,9 @@ brew "vale"
 brew "terrascan"
 brew "tflint"
 brew "git"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "prettify"
 cask "macfuse"
 cask "avibrazil-rdm"
 cask "deluge"
@@ -92,4 +94,3 @@ mas "Otter RSS", id: 1529696614
 mas "1Blocker", id: 1365531024
 mas "MeetInOne", id: 1542778639
 mas "Telegram", id: 747648890
-mas "Xcode", id: 497799835

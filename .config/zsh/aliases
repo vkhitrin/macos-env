@@ -1,7 +1,7 @@
 # Aliases
 
 ## If ggrep is installed, 'use' it instead of grep
-if [[ $(which ggrep) ]] 2>/dev/null; then
+if which ggrep > /dev/null 2>&1; then
     alias grep='ggrep --color'
 else
     alias grep='grep --color'

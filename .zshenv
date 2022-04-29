@@ -1,7 +1,7 @@
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=/usr/local/sbin:/opt/homebrew/bin/:$PATH
+export PATH=/opt/homebrew/bin/:$/opt/homebrew/sbin/:/usr/local/sbin:$PATH
 
 # History
 export HISTFILE=~/.zsh_history
