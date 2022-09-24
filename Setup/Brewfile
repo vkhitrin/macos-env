@@ -19,7 +19,7 @@ brew "tmux"
 brew "wget"
 brew "zplug"
 brew "zsh-completions"
-brew "avr-gcc"
+# brew "avr-gcc"
 brew "skopeo"
 brew "tldr"
 brew "watch"
@@ -54,7 +54,7 @@ brew "tflint"
 brew "git"
 brew "pyenv"
 brew "pyenv-virtualenv"
-brew "prettify"
+brew "prettier"
 cask "macfuse"
 cask "avibrazil-rdm"
 cask "deluge"
@@ -77,20 +77,3 @@ cask "deepl"
 cask "temurin"
 cask "vimr"
 cask "swiftdefaultappsprefpane"
-mas "Bitwarden", id: 1352778147
-mas "Parcel", id: 639968404
-mas "Amphetamine", id: 937984704
-mas "Pages", id: 409201541
-mas "Keynote", id: 409183694
-mas "Slack", id: 803453959
-mas "Numbers", id: 409203825
-mas "Shareful", id: 1522267256
-mas "Vinegar", id: 1591303229
-mas "Actions", id: 1586435171
-mas "Userscripts", id: 1463298887
-mas "Baking Soda", id: 1601151613
-mas "Hush", id: 1544743900
-mas "Otter RSS", id: 1529696614
-mas "1Blocker", id: 1365531024
-mas "MeetInOne", id: 1542778639
-mas "Telegram", id: 747648890
