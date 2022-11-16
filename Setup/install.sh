@@ -80,7 +80,7 @@ mackup -f restore
 
 # Upgrade pip
 echo "Upgrading pip and related packages"
-pip3 install -Uqqq virtualenv pip neovim python-lsp-server[all] pip install rst-language-server
+pip3 install -Uqqq virtualenv pip neovim python-lsp-server[all] pip install rst-language-server qmk
 
 # Link shipped brew completions
 brew completions link

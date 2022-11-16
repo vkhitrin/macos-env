@@ -20,4 +20,3 @@ alias less='less -rf'
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
-alias visudo="VISUAL='vim' sudo visudo"
