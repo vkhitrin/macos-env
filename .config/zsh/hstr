@@ -19,5 +19,6 @@ if [[ $(which mcfly) ]];then
     export MCFLY_RESULTS=50
     export MCFLY_RESULTS_SORT=LAST_RUN
     export MCFLY_DELETE_WITHOUT_CONFIRM=True
+    export MCFLY_LIGHT=true
     eval "$(mcfly init zsh)"
 fi

@@ -3,7 +3,7 @@
 
 arch: "default"
 images:
-  - location: "/tmp/fedora-coreos-35.20211215.3.0-qemu.x86_64.qcow2"
+  - location: "/tmp/fedora-coreos-36.20221030.3.0-live.aarch64.iso"
     arch: "x86_64"
 cpus: 2
 memory: "2GiB"

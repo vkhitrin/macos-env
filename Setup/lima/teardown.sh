@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-COMPRESSED_IMAGE_URI=${COMPRESSED_IMAGE_URI:-/tmp/fedora-coreos-35.20211215.3.0-qemu.x86_64.qcow2.xz}
-IMAGE_URI=${IMAGE_URI:-/tmp/fedora-coreos-35.20211215.3.0-qemu.x86_64.qcow2}
+IMAGE_REMOTE_URL=${IMAGE_REMOTE_URL:-https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/36.20221030.3.0/aarch64/fedora-coreos-36.20221030.3.0-live.aarch64.iso}
+IMAGE_URI=${IMAGE_URI:-/tmp/$(basename $IMAGE_REMOTE_URL)}
 GENERATED_HUMAN_IGNITION_FILE=${GENERATED_HUMAN_IGNITION_FILE:-/tmp/generated_ignition_file.yaml}
 IGNITION_FILE=${IGNITION_FILE:-/tmp/config.ign}
 LIMA_CACHE_PRUNE=${LIMA_CACHE_PRUNE:-true}
