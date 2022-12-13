@@ -20,5 +20,6 @@ if [[ $(which mcfly) ]];then
     export MCFLY_RESULTS_SORT=LAST_RUN
     export MCFLY_DELETE_WITHOUT_CONFIRM=True
     export MCFLY_LIGHT=true
+    export MCFLY_INTERFACE_VIEW=BOTTOM
     eval "$(mcfly init zsh)"
 fi

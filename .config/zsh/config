@@ -11,6 +11,12 @@ fi
 # Define OpenShfit CLI completion
 [ -f "/opt/homebrew/share/zsh-completions/_oc" ] && compdef _oc oc
 
+# Define GitHub CLI (gh) completion
+[ -f "/opt/homebrew/share/zsh-completions/_gh" ] || compdef _gh gh
+
+# Define Gitlab CLI (glab) completion
+[ -f "/opt/homebrew/share/zsh-completions/_glab" ] && compdef _glab glab
+
 # Enable pyenv
 [ -f "/opt/homebrew/bin/pyenv" ] && eval "$(pyenv init -)"
 
