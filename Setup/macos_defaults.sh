@@ -21,9 +21,24 @@ if [[ $ACTION == 'install' ]];then
     defaults import com.if.Amphetamine ./Setup/defaults/com.if.Amphetamine.plist
     defaults import com.if.Amphetamine-Enhancer ./Setup/defaults/com.if.Amphetamine-Enhancer.plist
     defaults import org.p0deje.Maccy ./Setup/defaults/org.p0deje.Maccy.plist
+    defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
+    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true"
+    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+    defaults write com.apple.finder "ShowPathbar" -bool "true"
+    defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+    defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+    defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+    defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "false"
+    defaults write com.apple.menuextra.clock "Show24Hour" -bool "true"
+    defaults write com.apple.menuextra.clock "ShowDate" -bool "true"
+    defaults write com.apple.menuextra.clock "ShowDayOfWeek" -bool "true"
+    defaults write com.apple.menuextra.clock "ShowSeconds" -bool "true"
+    defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
+    defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
     echo "Restarting Finder And Dock"
     killall Finder
     killall Dock
+    killall Safari
 elif [[ $ACTION == 'uninstall' ]]; then
     echo "Deleting macOS defaults"
     defaults delete com.apple.screencapture disable-shadow
@@ -39,9 +54,24 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.if.Amphetamine
     defaults delete com.if.Amphetamine-Enhancer
     defaults delete org.p0deje.Maccy
+    defaults delete com.apple.TimeMachine "DoNotOfferNewDisksForBackup"
+    defaults delete com.apple.safari "ShowFullURLInSmartSearchField"
+    defaults delete NSGlobalDomain "AppleShowAllExtensions"
+    defaults delete com.apple.finder "ShowPathbar"
+    defaults delete com.apple.finder "FXPreferredViewStyle"
+    defaults delete com.apple.finder "FXDefaultSearchScope"
+    defaults delete com.apple.finder "FXEnableExtensionChangeWarning"
+    defaults delete com.apple.menuextra.clock "FlashDateSeparators"
+    defaults delete com.apple.menuextra.clock "Show24Hour"
+    defaults delete com.apple.menuextra.clock "ShowDate"
+    defaults delete com.apple.menuextra.clock "ShowDayOfWeek"
+    defaults delete com.apple.menuextra.clock "ShowSeconds"
+    defaults delete com.apple.appleseed.FeedbackAssistant "Autogather"
+    defaults delete NSGlobalDomain AppleKeyboardUIMode
     echo "Restarting Finder And Dock"
     killall Finder
     killall Dock
+    killall Safari
 else
     echo "Accepted arguments: 'install', 'uninstall'"
 fi
