@@ -16,6 +16,9 @@ fi
 # Verify brew is installed
 which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
 
+# Disable brew analytics
+brew analytics off
+
 # Upgrade and update brew
 brew upgrade;brew update
 
@@ -99,7 +102,13 @@ brew completions link
 # Install local groovy-language-server
 if [[ ! -d $HOME/.local/groovy-language-server ]];then
     git clone "https://github.com/GroovyLanguageServer/groovy-language-server.git" $HOME/.local/groovy-language-server
-    cd $HOME/.local/groovy-language-server;./gradlew build
+    cd $HOME/.local/groovy-language-server; JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home ./gradlew build
 fi
+
+# Add SSH keys to ssh-agent
+ssh-add ~/.config/personal_keys/*
+
+# Create Directory Structures
+mkdir -p ~/Projects/Automation/ ~/Projects/Development ~/Projects/Containers
 
 echo "Please run 'compaudit | xargs chmod g-w' if needed."

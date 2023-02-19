@@ -48,3 +48,6 @@ rm -f ~/.mackup.cfg
 
 # Remove mackup applications config file
 rm -rf .mackup ~/.mackup
+
+# Remove keys from SSH agent
+ssh-add -D
