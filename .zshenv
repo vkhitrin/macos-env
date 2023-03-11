@@ -11,7 +11,3 @@ export SAVEHIST=10000000
 # Set default editor
 export EDITOR='subl --wait'
 export VISUAL=$EDITOR
-
-# unset
-unset SSH_AUTH_SOCK # Not aware of anything that uses it during my workflow https://github.com/containers/podman/issues/12728
-unset SSH_SK_PROVIDER # Not aware of anything that uses it during my workflow

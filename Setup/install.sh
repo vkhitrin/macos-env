@@ -83,7 +83,8 @@ mackup -f restore
 
 # Upgrade pip
 echo "Upgrading pip and related packages"
-pip3 install -Uqqq virtualenv pip neovim python-lsp-server[all] pip install rst-language-server qmk
+/usr/bin/python3 -m pip install lxml # Instal lxml on OS python
+pip3 install -Uqqq virtualenv pip neovim python-lsp-server[all] pip install rst-language-server qmk # use brew python
 
 # Link shipped brew completions
 brew completions link
@@ -98,6 +99,7 @@ brew completions link
 [ -f "/opt/homebrew/share/zsh-completions/_oc" ] || oc completion zsh > /opt/homebrew/share/zsh-completions/_oc
 [ -f "/opt/homebrew/share/zsh-completions/_gh" ] || gh completion -s zsh > /opt/homebrew/share/zsh-completions/_gh
 [ -f "/opt/homebrew/share/zsh-completions/_glab" ] || glab completion -s zsh > /opt/homebrew/share/zsh-completions/_glab
+[ -f "/opt/homebrew/share/zsh-completions/_bw" ] || bw completion --shell zsh > /opt/homebrew/share/zsh-completions/_bw
 
 # Install local groovy-language-server
 if [[ ! -d $HOME/.local/groovy-language-server ]];then
@@ -106,7 +108,7 @@ if [[ ! -d $HOME/.local/groovy-language-server ]];then
 fi
 
 # Add SSH keys to ssh-agent
-ssh-add ~/.config/personal_keys/*
+ssh-add ~/.config/personal_keys/private/*
 
 # Create Directory Structures
 mkdir -p ~/Projects/Automation/ ~/Projects/Development ~/Projects/Containers

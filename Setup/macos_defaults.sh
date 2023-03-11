@@ -10,6 +10,7 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     defaults write com.apple.Accessibility KeyRepeatDelay "0.25"
     defaults write com.apple.Accessibility KeyRepeatEnabled 1
+    defaults write.com.apple.Accessibility KeyRepeatInterval "0.03333333299999999"
     defaults write net.tunnelblick.tunnelblick doNotLaunchOnLogin -bool true
     defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
     defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -27,6 +28,7 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.finder "ShowPathbar" -bool "true"
     defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
     defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+    defaults write com.apple.finder "FXPreferredGroupBy" -string "Date Modified"
     defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
     defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "false"
     defaults write com.apple.menuextra.clock "Show24Hour" -bool "true"
@@ -35,10 +37,10 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.menuextra.clock "ShowSeconds" -bool "true"
     defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
     defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
-    echo "Restarting Finder And Dock"
-    killall Finder
-    killall Dock
-    killall Safari
+    echo "Restarting Finder,Dock and Safari"
+    killall -q Finder
+    killall -q Dock
+    killall -q Safari
 elif [[ $ACTION == 'uninstall' ]]; then
     echo "Deleting macOS defaults"
     defaults delete com.apple.screencapture disable-shadow
@@ -60,6 +62,7 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.apple.finder "ShowPathbar"
     defaults delete com.apple.finder "FXPreferredViewStyle"
     defaults delete com.apple.finder "FXDefaultSearchScope"
+    defaults delete com.apple.finder "FXPreferredGroupBy"
     defaults delete com.apple.finder "FXEnableExtensionChangeWarning"
     defaults delete com.apple.menuextra.clock "FlashDateSeparators"
     defaults delete com.apple.menuextra.clock "Show24Hour"
@@ -68,10 +71,10 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.apple.menuextra.clock "ShowSeconds"
     defaults delete com.apple.appleseed.FeedbackAssistant "Autogather"
     defaults delete NSGlobalDomain AppleKeyboardUIMode
-    echo "Restarting Finder And Dock"
-    killall Finder
-    killall Dock
-    killall Safari
+    echo "Restarting Finder, Dock and Safari"
+    killall -q Finder
+    killall -q Dock
+    killall -q Safari
 else
     echo "Accepted arguments: 'install', 'uninstall'"
 fi
