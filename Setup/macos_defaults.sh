@@ -10,7 +10,7 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
     defaults write com.apple.Accessibility KeyRepeatDelay "0.25"
     defaults write com.apple.Accessibility KeyRepeatEnabled 1
-    defaults write.com.apple.Accessibility KeyRepeatInterval "0.03333333299999999"
+    defaults write com.apple.Accessibility KeyRepeatInterval "0.03333333299999999"
     defaults write net.tunnelblick.tunnelblick doNotLaunchOnLogin -bool true
     defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
     defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -37,10 +37,12 @@ if [[ $ACTION == 'install' ]];then
     defaults write com.apple.menuextra.clock "ShowSeconds" -bool "true"
     defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
     defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+    defaults write com.apple.screencapture location "~/Documents/Screenshots"
+    defaults write org.alacritty AppleFontSmoothing -int 0
     echo "Restarting Finder,Dock and Safari"
-    killall -q Finder
-    killall -q Dock
-    killall -q Safari
+    killall -q Finder || true
+    killall -q Dock || true
+    killall -q Safari || true
 elif [[ $ACTION == 'uninstall' ]]; then
     echo "Deleting macOS defaults"
     defaults delete com.apple.screencapture disable-shadow
@@ -71,6 +73,8 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.apple.menuextra.clock "ShowSeconds"
     defaults delete com.apple.appleseed.FeedbackAssistant "Autogather"
     defaults delete NSGlobalDomain AppleKeyboardUIMode
+    defaults delete com.apple.screencapture location
+    defaults delete org.alacritty AppleFontSmoothing
     echo "Restarting Finder, Dock and Safari"
     killall -q Finder
     killall -q Dock

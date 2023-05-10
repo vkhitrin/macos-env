@@ -9,5 +9,5 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 
 # Set default editor
-export EDITOR='subl --wait'
+export EDITOR='nvim'
 export VISUAL=$EDITOR

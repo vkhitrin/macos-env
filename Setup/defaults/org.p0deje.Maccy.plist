@@ -4,6 +4,8 @@
 <dict>
 	<key>KeyboardShortcuts_popup</key>
 	<string>{"carbonModifiers":768,"carbonKeyCode":9}</string>
+	<key>LaunchAtLogin__hasMigrated</key>
+	<true/>
 	<key>NSNavLastRootDirectory</key>
 	<string>/Applications</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -13,17 +15,17 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>3440 725 800 448 2560 0 2560 1415 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>3640 961 400 134 2560 0 2560 1415 </string>
+	<string>664 709 400 134 0 0 1728 1079 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>3530 762 620 398 2560 0 2560 1415 </string>
 	<key>NSWindow Frame com.sindresorhus.Preferences.FrameAutosaveName</key>
-	<string>3588 550 502 527 0 0 1920 1055 </string>
+	<string>601 234 526 662 0 0 1728 1079 </string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2022-02-07T12:14:31Z</date>
+	<date>2023-04-24T11:03:44Z</date>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>1620038788</integer>
 	<key>WebKitDefaultFontSize</key>
@@ -42,10 +44,12 @@
 	<string>/Applications/Maccy.app/Contents/Frameworks/Sparkle.framework/Resources/ReleaseNotesColorStyle.css</string>
 	<key>enabledPasteboardTypes</key>
 	<array>
-		<string>public.file-url</string>
-		<string>public.png</string>
 		<string>public.tiff</string>
 		<string>public.utf8-plain-text</string>
+		<string>public.html</string>
+		<string>public.rtf</string>
+		<string>public.png</string>
+		<string>public.file-url</string>
 	</array>
 	<key>hideFooter</key>
 	<false/>
@@ -53,12 +57,10 @@
 	<false/>
 	<key>hideTitle</key>
 	<true/>
-	<key>history</key>
-	<data>
-	YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ
-	</data>
 	<key>historySize</key>
 	<integer>999</integer>
+	<key>ignoreAllAppsExceptListed</key>
+	<false/>
 	<key>ignoredApps</key>
 	<array>
 		<string>com.bitwarden.desktop</string>
@@ -71,6 +73,8 @@
 		<string>com.typeit4me.clipping</string>
 		<string>com.agilebits.onepassword</string>
 	</array>
+	<key>imageMaxHeight</key>
+	<integer>16</integer>
 	<key>migrations</key>
 	<dict>
 		<key>2020-02-22-history-item-add-copied-at</key>
@@ -91,7 +95,15 @@
 		<true/>
 		<key>2021-10-16-remove-dynamic-pasteboard-types</key>
 		<true/>
+		<key>2022-08-01-rename-suppress-clear-alert</key>
+		<true/>
+		<key>2022-11-14-add-html-rtf-to-supported-types</key>
+		<true/>
+		<key>2023-01-22-add-regexp-search-mode</key>
+		<true/>
 	</dict>
+	<key>previewDelay</key>
+	<integer>200</integer>
 	<key>showInStatusBar</key>
 	<false/>
 	<key>showRecentCopyInMenuBar</key>

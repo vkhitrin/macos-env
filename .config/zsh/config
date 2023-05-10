@@ -1,5 +1,5 @@
 # Update PATH
-export PATH=/opt/homebrew/bin/:/opt/homebrew/sbin/:/usr/local/sbin:$(pyenv root)/shims:$PATH
+export PATH=/opt/homebrew/bin/:/opt/homebrew/sbin/:/usr/local/sbin:$PATH
 
 # Source zsh-completion
 if [[ -d "/opt/homebrew//share/zsh-completions" ]];then
@@ -17,8 +17,8 @@ fi
 # Define Gitlab CLI (glab) completion
 [ -f "/opt/homebrew/share/zsh-completions/_glab" ] && compdef _glab glab
 
-# Enable pyenv
-[ -f "/opt/homebrew/bin/pyenv" ] && eval "$(pyenv init -)"
+# Enable rtx
+[ -f "/opt/homebrew/bin/rtx" ] && eval "$(rtx activate zsh)"
 
 # Add tab highlight
 zstyle ':completion:*' menu select
