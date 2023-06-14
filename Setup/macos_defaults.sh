@@ -4,7 +4,6 @@
 
 ACTION=$1
 if [[ $ACTION == 'install' ]];then
-    echo "Writing macOS defaults"
     defaults write com.apple.screencapture disable-shadow -bool true
     defaults write com.apple.finder AppleShowAllFiles -bool true
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -17,11 +16,11 @@ if [[ $ACTION == 'install' ]];then
     defaults write -g PMPrintingExpandedStateForPrint -bool true
     defaults write -g PMPrintingExpandedStateForPrint2 -bool true
     defaults write -g WebContinuousSpellCheckingEnabled -bool true
+    defaults write com.apple.dock "autohide" -bool "true"
     defaults write com.apple.dock "autohide-time-modifier" -float "0"
     # TODO apply defaults based on file names in ./Setup/defaults/*
     defaults import com.if.Amphetamine ./Setup/defaults/com.if.Amphetamine.plist
     defaults import com.if.Amphetamine-Enhancer ./Setup/defaults/com.if.Amphetamine-Enhancer.plist
-    defaults import org.p0deje.Maccy ./Setup/defaults/org.p0deje.Maccy.plist
     defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
     defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true"
     defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
@@ -39,12 +38,7 @@ if [[ $ACTION == 'install' ]];then
     defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
     defaults write com.apple.screencapture location "~/Documents/Screenshots"
     defaults write org.alacritty AppleFontSmoothing -int 0
-    echo "Restarting Finder,Dock and Safari"
-    killall -q Finder || true
-    killall -q Dock || true
-    killall -q Safari || true
 elif [[ $ACTION == 'uninstall' ]]; then
-    echo "Deleting macOS defaults"
     defaults delete com.apple.screencapture disable-shadow
     defaults delete com.apple.finder AppleShowAllFiles
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool false
@@ -57,7 +51,6 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete com.apple.dock "autohide-time-modifier"
     defaults delete com.if.Amphetamine
     defaults delete com.if.Amphetamine-Enhancer
-    defaults delete org.p0deje.Maccy
     defaults delete com.apple.TimeMachine "DoNotOfferNewDisksForBackup"
     defaults delete com.apple.safari "ShowFullURLInSmartSearchField"
     defaults delete NSGlobalDomain "AppleShowAllExtensions"
@@ -75,10 +68,7 @@ elif [[ $ACTION == 'uninstall' ]]; then
     defaults delete NSGlobalDomain AppleKeyboardUIMode
     defaults delete com.apple.screencapture location
     defaults delete org.alacritty AppleFontSmoothing
-    echo "Restarting Finder, Dock and Safari"
-    killall -q Finder
-    killall -q Dock
-    killall -q Safari
+    defaults write com.apple.dock "autohide" -bool "false"
 else
     echo "Accepted arguments: 'install', 'uninstall'"
 fi

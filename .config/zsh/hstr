@@ -15,7 +15,7 @@ setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
 # Using mcfly if it is installed
 if [[ $(which mcfly) ]];then
-    export MCFLY_FUZZY=2
+    export MCFLY_FUZZY=0
     export MCFLY_RESULTS=50
     export MCFLY_RESULTS_SORT=LAST_RUN
     export MCFLY_DELETE_WITHOUT_CONFIRM=true

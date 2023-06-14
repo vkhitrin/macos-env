@@ -17,6 +17,6 @@ which nvim > /dev/null 2>&1 && alias vim='nvim'
 
 alias ll='ls -l'
 alias less='less -rf'
-alias mv='mv -i'
-alias rm='rm -i'
-alias cp='cp -i'
+
+# Custom aliases
+alias _backup_my_macos="mackup backup -vf; cp -rf $HOME/Library/Preferences/ByHost $HOME/.iCloudDrive/Mackup/Library/Preferences"
