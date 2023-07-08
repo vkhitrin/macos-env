@@ -1,9 +1,9 @@
 # Update PATH
-export PATH=/opt/homebrew/bin/:/opt/homebrew/sbin/:/usr/local/sbin:$PATH
+export PATH=/opt/homebrew/bin/:/opt/homebrew/sbin/:/usr/local/sbin:$HOME/.local/bin:$PATH
 
 # Source zsh-completion
-if [[ -d "/opt/homebrew//share/zsh-completions" ]];then
-    FPATH="/opt/homebrew//share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if [[ -d "/opt/homebrew/share/zsh-completions" ]];then
+    FPATH="/opt/homebrew/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}"
     autoload -Uz compinit promptipnit
     compinit
 fi

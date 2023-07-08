@@ -9,3 +9,6 @@ bindkey -e
 
 # Source hstr
 [ -f $HOME/.config/zsh/hstr ] && source $HOME/.config/zsh/hstr
+ 
+# Source zsh functions
+[ -f $HOME/.config/zsh/functions ] && source $HOME/.config/zsh/functions
