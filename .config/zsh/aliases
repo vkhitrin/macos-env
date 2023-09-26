@@ -21,6 +21,6 @@ alias less='less -rf'
 alias lsregister='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister'
 
 # Custom aliases
-alias _backup_my_macos="mackup backup -vf; cp -rf $HOME/Library/Preferences/ByHost $HOME/.iCloudDrive/Mackup/Library/Preferences"
+alias _backup_my_macos="mackup backup -vf; cp -rf $HOME/Library/Preferences/ByHost $HOME/.iCloudDrive/Mackup/Library/Preferences; open raycast://extensions/raycast/raycast/export-settings-data"
 alias system_python="/usr/bin/python3"
 alias system_pip="/usr/bin/python3 -m pip"
