@@ -8,23 +8,11 @@ macOS Sonoma (14) checklist:
 
 - [ ] Find a replacment for mackup (for the time being, all relevant paths can be retrieved using `mackup backup -vn`)
 
-## Mackup vs Git
-
-**Note:** Currently, [on macOS14, mackup doesn't work](https://github.com/lra/mackup/issues/1924)
-
-Mackup has the option to backup bash and more dotfiles.
-
-In my personal preference, I rather have my dotfiles in git because dotfiles are a big part of my
-workflow and are changed often and having the proper version control is important to me.
-
-Application configuration is more 'static' and sensitive.
-Mackup is a great solution since it's less important to document the changes.
-
 ## Installation
 
-To install dot files and CLI utilities, use `make install`.
+Use `make` command to install relevant components.
 
-To restore Raycast DB, restore private `application password` items from the `login` keychain.
+Dotfiles are stored externally in a separate repository [vkhitrin/dotfiles](https://github.com/vkhitrin/dotfiles).
 
 ## Hardware
 

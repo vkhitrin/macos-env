@@ -176,6 +176,7 @@ brew "llvm"
 brew "lua"
 brew "lua@5.3"
 brew "luajit"
+brew "luarocks"
 brew "luv"
 brew "lz4"
 brew "lzo"
@@ -266,7 +267,7 @@ brew "swig"
 brew "taglib"
 brew "taplo"
 brew "telnet"
-brew "terraform"
+brew "opentofu"
 brew "terraform-ls"
 brew "terrascan"
 brew "tesseract"
@@ -312,7 +313,6 @@ cask "alacritty"
 cask "alt-tab"
 cask "altserver"
 cask "betterdisplay"
-cask "chipmunk"
 cask "focusrite-control"
 cask "fuse-t"
 cask "fuse-t-sshfs"
@@ -338,11 +338,9 @@ cask "temurin11"
 cask "tunnelblick"
 cask "utm"
 cask "via"
-cask "whatsapp-alpha"
 cask "wireshark"
 cask "wooshy"
 cask "xquartz"
-cask "zed"
 # mas
 mas "MeetInOne", id: 1542778639
 mas "Parcel", id: 639968404
@@ -355,7 +353,6 @@ mas "Baking Soda", id: 1601151613
 mas "Slack", id: 803453959
 mas "Otter RSS", id: 1529696614
 mas "Telegram", id: 747648890
-mas "Bitwarden", id: 1352778147
 mas "Hackit", id: 1549557075
 mas "Grammarly for Safari", id: 1462114288
 mas "Refined GitHub", id: 1519867270
