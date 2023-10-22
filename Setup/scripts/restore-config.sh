@@ -10,5 +10,5 @@ print_padded_title "Configuration - restore mackup backups"
 cp -f .mackup.cfg "$HOME/"
 rm -rf "$HOME/.mackup"
 cp -rf .mackup "$HOME/.mackup"
-mackup restore -vf && mackup uninstall --force 
+/Users/vadimk/Library/Python/3.9/bin/mackup restore -vf && /Users/vadimk/Library/Python/3.9/bin/mackup uninstall --force 
 open raycast://extensions/raycast/raycast/import-settings-data

@@ -19,3 +19,6 @@ fi
 print_padded_title "Repos - Clone dotfiles"
 # Might fail, revisit on new re-install
 [ -d "$HOME/Projects/Automation/Setup/dotfiles" ] || git clone --separate-git-dir="$HOME/Projects/Automation/Setup/dotfiles" http://github.com/vkhitrin/dotfiles /tmp/dotfiles; rsync --recursive --verbose --exclude "README.md" --exclude ".git" /tmp/dotfiles/ "$HOME/" && rm -rf /tmp/dotfiles
+
+print_padded_title "Mackup - Install Via System's Python"
+/usr/bin/python3 -m pip install mackup
