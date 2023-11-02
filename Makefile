@@ -4,14 +4,14 @@
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | sed -e 's/\(\:.*\#\#\)/\:\ /' | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
+install-directories: ##Installs directories
+	@./Setup/scripts/install-directories.sh
+
 install-brew: ##Installs brew dependencies
 	@./Setup/scripts/install-brew.sh
 
 install-extra: ##Installs extra dependencies
 	@./Setup/scripts/install-extra.sh
-
-install-directories: ##Installs directories
-	@./Setup/scripts/install-directories.sh
 
 install-defaults: ##Installs macOS defaults
 	@./Setup/scripts/install-defaults.sh

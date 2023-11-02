@@ -22,6 +22,7 @@ brew bundle --quiet --file=./Setup/Brewfile
 # Soft links
 print_padded_title "Files - Soft Links"
 ln -sf /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl
+ln -sf /opt/homebrew/bin/tofu "$HOME/.local/bin/terraform"
 
 # Cleanup brew
 print_padded_title "Brew - Cleanup"
@@ -42,3 +43,5 @@ brew completions link
 [ -f "/opt/homebrew/share/zsh-completions/_rtx" ] || rtx completion zsh > /opt/homebrew/share/zsh-completions/_rtx
 [ -f "/opt/homebrew/share/zsh-completions/_snipkit" ] || snipkit completion zsh > /opt/homebrew/share/zsh-completions/_snipkit
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
+autoload bashcompinit && bashcompinit
+autoload compinit && compinit

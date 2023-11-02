@@ -12,7 +12,7 @@ if [ -z "$SF_MONO_FONTS" ];then
     curl https://devimages-cdn.apple.com/design/resources/download/SF-Mono.dmg -o /tmp/SF-Mono.dmg
     hdiutil mount /tmp/SF-Mono.dmg
     sudo installer -pkg /Volumes/SFMonoFonts/SF\ Mono\ Fonts.pkg -target /
-    hdiutil unmount $(mount | grep SFMono | cut -d " " -f1)
+    hdiutil unmount "$(mount | grep SFMono | cut -d ' ' -f1)"
 fi
 
 # Dotfiles
@@ -22,3 +22,6 @@ print_padded_title "Repos - Clone dotfiles"
 
 print_padded_title "Mackup - Install Via System's Python"
 /usr/bin/python3 -m pip install mackup
+
+print_padded_title "passhole- Install Via Brew's Python"
+$HOMEBREW_PATH_PREFIX/pip3 install passhole
