@@ -37,6 +37,7 @@ brew "cffi"
 brew "cjson"
 brew "clop"
 brew "cmake"
+brew "cmctl"
 brew "cmocka"
 brew "cocoapods"
 brew "commitlint"
@@ -339,7 +340,6 @@ mas "1Blocker", id: 1365531024
 mas "Hush", id: 1544743900
 mas "Baking Soda", id: 1601151613
 mas "Slack", id: 803453959
-mas "Otter RSS", id: 1529696614
 mas "Grammarly for Safari", id: 1462114288
 mas "Refined GitHub", id: 1519867270
 mas "Strongbox", id: 897283731
