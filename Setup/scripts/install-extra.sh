@@ -23,5 +23,5 @@ print_padded_title "Repos - Clone dotfiles"
 print_padded_title "Mackup - Install Via System's Python"
 /usr/bin/python3 -m pip install mackup
 
-print_padded_title "passhole- Install Via Brew's Python"
-$HOMEBREW_PATH_PREFIX/pip3 install passhole
+print_padded_title "pip3 - Install Additional Software Using Brew's pip"
+$HOMEBREW_PATH_PREFIX/pip3 install passhole s3cmd
