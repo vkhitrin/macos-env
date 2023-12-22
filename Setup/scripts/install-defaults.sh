@@ -41,6 +41,10 @@ defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 defaults write com.apple.screencapture location "$HOME/Documents/Screenshots"
 defaults write org.alacritty AppleFontSmoothing -int 0
+defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 10
+defaults write com.knollsoft.Rectangle screenEdgeGapBottom -int 10
+defaults write com.knollsoft.Rectangle screenEdgeGapLeft -int 10
+defaults write com.knollsoft.Rectangle screenEdgeGapRight -int 10
 
 print_padded_title "defaults - Kill applications"
 killall -q Finder || true

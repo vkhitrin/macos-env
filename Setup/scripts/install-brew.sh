@@ -19,6 +19,9 @@ print_padded_title "Brew - Install/Update"
 [ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
 brew bundle --quiet --file=./Setup/Brewfile
 
+print_padded_title "Brew - Start Services"
+brew services start borders
+
 # Soft links
 print_padded_title "Files - Soft Links"
 ln -sf /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl
@@ -35,8 +38,6 @@ print_padded_title "Brew - Completions"
 brew completions link
 # Add completions to tools that are not shipped by zsh-completions
 [ -f "/opt/homebrew/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
-# [ -f "/opt/homebrew/share/zsh-completions/_limactl" ] || limactl completion zsh > /opt/homebrew/share/zsh-completions/_limactl
-# [ -f "/opt/homebrew/share/zsh-completions/_oc" ] || oc completion zsh > /opt/homebrew/share/zsh-completions/_oc
 [ -f "/opt/homebrew/share/zsh-completions/_gh" ] || gh completion -s zsh > /opt/homebrew/share/zsh-completions/_gh
 # [ -f "/opt/homebrew/share/zsh-completions/_glab" ] || glab completion -s zsh > /opt/homebrew/share/zsh-completions/_glab
 # [ -f "/opt/homebrew/share/zsh-completions/_bw" ] || bw completion --shell zsh > /opt/homebrew/share/zsh-completions/_bw
