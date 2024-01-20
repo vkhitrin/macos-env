@@ -17,7 +17,7 @@ function print_padded_title {
 }
  
 # Make sure script isn't executed on non macOS systems
-print_padded_title "Prerequisites Check"
+print_padded_title "macOS Check"
 if [[ $(uname) != "Darwin" ]];then
     error_exit "Please make sure you're running on macOS"
 fi
