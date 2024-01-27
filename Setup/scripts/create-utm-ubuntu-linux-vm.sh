@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO: consider adding rosetta and multi-arch installtion inside the guest as part of cloud-init
 set -eo pipefail
 
 # Variable definition

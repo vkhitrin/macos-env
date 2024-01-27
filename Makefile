@@ -1,5 +1,5 @@
 .DEFAULT: help
-.PHONY: install-brew install-extra install-directories install-defaults install-tmux-tpm restore-config create-utm-arch-linux-vm
+.PHONY: install-brew install-extra install-directories install-defaults install-tmux-tpm restore-config create-utm-arch-linux-vm create-utm-ubuntu-linux-vm
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | sed -e 's/\(\:.*\#\#\)/\:\ /' | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -24,3 +24,6 @@ restore-config: ##Restores configuration
 
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./Setup/scripts/create-utm-arch-linux-vm.sh
+
+create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
+	@./Setup/scripts/create-utm-ubuntu-linux-vm.sh

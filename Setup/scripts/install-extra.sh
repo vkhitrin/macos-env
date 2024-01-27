@@ -24,4 +24,4 @@ print_padded_title "Mackup - Install Via System's Python"
 /usr/bin/python3 -m pip install mackup
 
 print_padded_title "pip3 - Install Additional Software Using Brew's pip"
-$HOMEBREW_PATH_PREFIX/pip3 install passhole s3cmd
+$HOMEBREW_PATH_PREFIX/pip3 install passhole s3cmd harlequin[postgres,s3,mysql,odbc] scylla-cqlsh
