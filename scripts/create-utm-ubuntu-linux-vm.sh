@@ -1,13 +1,30 @@
 #!/usr/bin/env bash
+# TODO: consider adding rosetta and multi-arch installtion inside the guest as part of cloud-init
 set -eo pipefail
 
 # Variable definition
-UTM_VIRTUAL_MACHINE_DISPLAY_NAME=${UTM_VIRTUAL_MACHINE_DISPLAY_NAME:-arch\-linux\-00}
+UTM_VIRTUAL_MACHINE_DISPLAY_NAME=${UTM_VIRTUAL_MACHINE_DISPLAY_NAME:-ubuntu\-linux\-00}
 UTM_VIRTUAL_MACHINE_VIRTUAL_CPU_COUNT=${UTM_VIRTUAL_MACHINE_VIRTUAL_CPU_COUNT:-4}
 UTM_VIRTUAL_MACHINE_VIRTUAL_MEMORY_AMOUNT=${UTM_VIRTUAL_MACHINE_VIRTUAL_MEMORY_AMOUNT:-8192}
-UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE=${UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE:-120g}
+UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE=${UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE:-20g}
 UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY="$HOME/Library/Containers/com.utmapp.UTM/Data/Documents"
 UTM_VIRTUAL_MACHINE_BUNDLE_PATH="$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY/$UTM_VIRTUAL_MACHINE_DISPLAY_NAME.utm"
+UBUNTU_DISK_IMAGE_ARCHIVE_URL="https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-arm64.tar.gz"
+UBUNTU_DISK_IMAGE_ARCHIVE_NAME=$(basename ${UBUNTU_DISK_IMAGE_ARCHIVE_URL})
+UBUNTU_VMLINUZ_URL="https://cloud-images.ubuntu.com/jammy/current/unpacked/jammy-server-cloudimg-arm64-vmlinuz-generic"
+UBUNTU_INITRD_URL="https://cloud-images.ubuntu.com/jammy/current/unpacked/jammy-server-cloudimg-arm64-initrd-generic"
+UBUNTU_VMLINUZ_NAME=$(basename ${UBUNTU_VMLINUZ_URL})
+UBUNTU_INITRD_NAME=$(basename ${UBUNTU_INITRD_URL})
+UBUNTU_LINUX_COMMAND_LINE="console=hvc0 root=/dev/vdb"
+CLOUDINIT_METADATA_CONTENT="""
+instance-id: ${UTM_VIRTUAL_MACHINE_DISPLAY_NAME}
+local-hostname: ${UTM_VIRTUAL_MACHINE_DISPLAY_NAME}
+"""
+CLOUDINIT_USERDATA_CONTENT="""#cloud-config
+password: 12345678
+chpasswd:
+  expire: false
+"""
 
 function _genereate_apple_virtual_machine_identifier {
 swift repl << EOF > /tmp/apple_vm_identifier.txt
@@ -47,7 +64,7 @@ rm -rf /tmp/apple_vm_identifier.txt
 # EOF
 # }
 
-source ./Setup/scripts/common.sh
+source /scripts/common.sh
 [ -d "/Applications/UTM.app" ] || error_exit "UTM is not installed"
 [ -d "$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY" ] || error_exit "UTM virtual machine bundle directory '$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY' is not present"
 
@@ -68,6 +85,7 @@ UTM_VIRTUAL_MACHINE_APPLE_VIRTUAL_MACHINE_IDENTIFIER=$(_genereate_apple_virtual_
 print_padded_title "UTM - Generate UTM Metadata Unique Identifiers"
 UTM_VIRTUAL_MACHINE_UUID=$(uuidgen)
 UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID=$(uuidgen)
+UTM_VIRTUAL_MACHINE_CLOUD_INIT_UUID=$(uuidgen)
 
 print_padded_title "UTM - Generate 'config.plist'"
 /usr/libexec/PlistBuddy -c 'save' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
@@ -88,9 +106,9 @@ print_padded_title "UTM - Generate 'config.plist'"
 /usr/libexec/PlistBuddy -c "add :System:GenericPlatform:machineIdentifier data $UTM_VIRTUAL_MACHINE_APPLE_VIRTUAL_MACHINE_IDENTIFIER" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :System:Boot:UEFIBoot bool false' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :System:Boot:OperatingSystem string Linux' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c 'add :System:Boot:LinuxCommandLine string console=hvc0' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c 'add :System:Boot:LinuxKernelPath string Image-aarch64' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c 'add :System:Boot:LinuxInitialRamdiskPath string initrd-aarch64.img' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :System:Boot:LinuxCommandLine string ${UBUNTU_LINUX_COMMAND_LINE}" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :System:Boot:LinuxKernelPath string ${UBUNTU_VMLINUZ_NAME}" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :System:Boot:LinuxInitialRamdiskPath string ${UBUNTU_INITRD_NAME}" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:Pointer bool true' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:Trackpad bool false' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:Keyboard bool true' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
@@ -99,24 +117,43 @@ print_padded_title "UTM - Generate 'config.plist'"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:Rosetta bool true' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:Balloon bool true' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Virtualization:ClipboardSharing bool true' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c 'add :Information:Icon string arch-linux' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c 'add :Information:Icon string ubuntu' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c "add :Information:Name string $UTM_VIRTUAL_MACHINE_DISPLAY_NAME" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c "add :Information:UUID string $UTM_VIRTUAL_MACHINE_UUID" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Information:IconCustom bool false' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Display array' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c 'add :Display:0:HeightPixels integer 1080' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c 'add :Display:0:PixelsPerInch integer 80' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c 'add :Display:0:WidthPixels integer 1920' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :Drive array' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c "add :Drive:0:Identifier string $UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c "add :Drive:0:ImageName string $UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID.img" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
-/usr/libexec/PlistBuddy -c "add :Drive:0:ReadOnly bool false" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:0:Identifier string $UTM_VIRTUAL_MACHINE_CLOUD_INIT_UUID" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:0:ImageName string ci.iso" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:0:ReadOnly bool true" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:1:Identifier string $UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:1:ImageName string $UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID.img" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
+/usr/libexec/PlistBuddy -c "add :Drive:1:ReadOnly bool false" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 /usr/libexec/PlistBuddy -c 'add :ConfigurationVersion integer 4' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 
-print_padded_title "UTM - Download External Arch Linux Binaries"
-curl 'https://archboot.com/iso/aarch64/latest/boot/Image-aarch64' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/Image-aarch64"
-curl 'https://archboot.com/iso/aarch64/latest/boot/initrd-aarch64.img' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/initrd-aarch64.img"
+print_padded_title "UTM - Download External Ubuntu Linux Binaries"
+wget -q ${UBUNTU_VMLINUZ_URL} -O "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/${UBUNTU_VMLINUZ_NAME}.gz"
+gunzip "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/${UBUNTU_VMLINUZ_NAME}.gz"
+wget -q ${UBUNTU_INITRD_URL} -O "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/${UBUNTU_INITRD_NAME}"
 
-print_padded_title "UTM - Generate Disk Image (Storage)"
-hdiutil create -layout none -size "$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID"
-mv "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID.dmg" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID.img"
+print_padded_title "UTM - Download Initial Disk Image"
+test -f "${HOME}/Downloads/${UBUNTU_DISK_IMAGE_ARCHIVE_NAME}" || wget -q "${UBUNTU_DISK_IMAGE_ARCHIVE_URL}" -O "${HOME}/Downloads/${UBUNTU_DISK_IMAGE_ARCHIVE_NAME}"
+tar -xvf "${HOME}/Downloads/${UBUNTU_DISK_IMAGE_ARCHIVE_NAME}" -C "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/"
+mv "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/jammy-server-cloudimg-arm64.img" "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/${UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID}.img"
+
+print_padded_title "UTM - Resize Initial Disk Image"
+qemu-img resize -f raw "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/${UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID}.img" "${UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE}"
+
+print_padded_title "UTM - Generate cloud-init ISO"
+CLOUD_INIT_TEMPORARY_DIR=$(mktemp -d)
+echo "${CLOUDINIT_METADATA_CONTENT}" > "${CLOUD_INIT_TEMPORARY_DIR}/meta-data"
+echo "${CLOUDINIT_USERDATA_CONTENT}" > "${CLOUD_INIT_TEMPORARY_DIR}/user-data"
+xorrisofs -output "${CLOUD_INIT_TEMPORARY_DIR}/ci.iso" -volid cidata -joliet -rock "${CLOUD_INIT_TEMPORARY_DIR}/meta-data" "${CLOUD_INIT_TEMPORARY_DIR}/user-data"
+mv "${CLOUD_INIT_TEMPORARY_DIR}/ci.iso" "${UTM_VIRTUAL_MACHINE_BUNDLE_PATH}/Data/"
+rm -rf "${CLOUD_INIT_TEMPORARY_DIR=$}"
 
 print_padded_title "UTM - Import Virtual Machine Bundle"
 open "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH"
@@ -125,5 +162,3 @@ print_padded_title "Notes"
 # Network devices are usng `vmnet` framework, DHCP leases can be read at `/var/db/dhcpd_leases`, can be converted to JSON using `cat /var/db/dhcpd_leases | sed -e 's/\t\(.*\)=\(.*\)/"\1": "\2",/g' | tr -d '\n' | sed -E 's:,(\s*}):\1:g' | jq`
 # Configuration is stored at `/Library/Preferences/SystemConfiguration/com.apple.vmnet.plist`
 echo "* Don't forget to create network device manually!"
-# Shared directories are stored in `defaults read com.utmapp.UTM`, should look for a way to inject this myself
-echo "* Don't forget to share $HOME with virtual machine"

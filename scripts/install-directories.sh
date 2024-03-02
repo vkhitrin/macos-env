@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source ./Setup/scripts/common.sh
+source ./scripts/common.sh
 
 # Ensure iCloud is enabled on system
 /usr/libexec/PlistBuddy -c "print :Accounts:0:Services:" ~/Library/Preferences/MobileMeAccounts.plist | grep MOBILE_DOCUMENTS -A3 -B3 | grep 'Enabled = true' > /dev/null 2>/dev/null || error_exit "iCloud is not enabled on the system"
@@ -16,7 +16,7 @@ print_padded_title "Directories - .iCloud"
 
 # Create Directories
 print_padded_title "Directories - Projects"
-mkdir -p "$HOME/Projects/Automation/Setup" "$HOME/Projects/Development" "$HOME/Projects/Containers" "$HOME/Documents/Screenshots"
+mkdir -p "$HOME/Projects/Automation" "$HOME/Projects/Development" "$HOME/Projects/Containers" "$HOME/Documents/Screenshots"
 
 print_padded_title "Directories - .local"
 mkdir -p "$HOME/.local/bin"

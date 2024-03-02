@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source ./Setup/scripts/common.sh
+source ./scripts/common.sh
 
 # Verify brew is installed
 which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
@@ -16,11 +16,11 @@ brew update
 
 # Install brew packages
 print_padded_title "Brew - Install/Update"
-[ -f ./Setup/Brewfile ] || error_exit "No Brewfile is found"
-brew bundle --quiet --file=./Setup/Brewfile
+[ -f Brewfile ] || error_exit "No Brewfile is found"
+brew bundle --quiet --file=Brewfile
 
-print_padded_title "Brew - Start Services"
-brew services start borders
+# print_padded_title "Brew - Start Services"
+# brew services start borders
 
 # Soft links
 print_padded_title "Files - Soft Links"
@@ -37,12 +37,12 @@ print_padded_title "Brew - Completions"
 # Link shipped brew completions
 brew completions link
 # Add completions to tools that are not shipped by zsh-completions
-[ -f "/opt/homebrew/share/zsh-completions/_podman" ] || podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
-[ -f "/opt/homebrew/share/zsh-completions/_gh" ] || gh completion -s zsh > /opt/homebrew/share/zsh-completions/_gh
+podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
+gh completion -s zsh > /opt/homebrew/share/zsh-completions/_gh
 # [ -f "/opt/homebrew/share/zsh-completions/_glab" ] || glab completion -s zsh > /opt/homebrew/share/zsh-completions/_glab
 # [ -f "/opt/homebrew/share/zsh-completions/_bw" ] || bw completion --shell zsh > /opt/homebrew/share/zsh-completions/_bw
-[ -f "/opt/homebrew/share/zsh-completions/_rtx" ] || rtx completion zsh > /opt/homebrew/share/zsh-completions/_rtx
-[ -f "/opt/homebrew/share/zsh-completions/_snipkit" ] || snipkit completion zsh > /opt/homebrew/share/zsh-completions/_snipkit
+mise completion zsh > /opt/homebrew/share/zsh-completions/_mise
+snipkit completion zsh > /opt/homebrew/share/zsh-completions/_snipkit
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
-autoload bashcompinit && bashcompinit
-autoload compinit && compinit
+# autoload bashcompinit && bashcompinit
+# autoload compinit && compinit

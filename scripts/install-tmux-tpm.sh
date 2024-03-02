@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-source ./Setup/scripts/common.sh
+source ./scripts/common.sh
 
 # Install Tmux Plugin Manager
 print_padded_title "tmux - Install Plugin Manager 'tpm'"
