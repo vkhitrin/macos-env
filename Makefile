@@ -16,11 +16,17 @@ install-extra: ##Installs extra dependencies
 install-defaults: ##Installs macOS defaults
 	@./scripts/install-defaults.sh
 
+restore-config: ##Restores configuration
+	@./scripts/restore-config.sh
+
 install-tmux-tpm: ##Installs tmux plugin manager
 	@./scripts/install-tmux-tpm.sh
 
-restore-config: ##Restores configuration
-	@./scripts/restore-config.sh
+install-post-restore: ##Installs scripts post restore
+	@./scripts/install-post-restore.sh
+
+install-private-customizations: ##Installs private customizations
+	@./scripts/install-private-customizations.sh 
 
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/create-utm-arch-linux-vm.sh
