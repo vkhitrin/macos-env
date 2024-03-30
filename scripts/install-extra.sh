@@ -25,7 +25,7 @@ print_padded_title "Mackup - Install Via System's Python"
 /usr/bin/python3 -m pip install mackup
 
 print_padded_title "pip3 - Install Additional Software Using Brew's pip"
-$HOMEBREW_PATH_PREFIX/pip3 install --break-system-packages --upgrade passhole s3cmd harlequin[postgres,s3,mysql,odbc] scylla-cqlsh catppuccin[pygments]
+$HOMEBREW_PATH_PREFIX/pip3 install --break-system-packages --upgrade passhole harlequin[postgres,s3,mysql,odbc] scylla-cqlsh catppuccin[pygments]
 
 # Kubernetes krew plugins
 print_padded_title "krew - Install Kubernetes CLI Extensions Using krew"
