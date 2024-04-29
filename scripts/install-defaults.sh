@@ -45,8 +45,12 @@ defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 10
 defaults write com.knollsoft.Rectangle screenEdgeGapBottom -int 10
 defaults write com.knollsoft.Rectangle screenEdgeGapLeft -int 10
 defaults write com.knollsoft.Rectangle screenEdgeGapRight -int 10
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write com.apple.screencapture name "screencapture"
+defaults write com.apple.screencapture "include-date" 0
 
 print_padded_title "defaults - Kill applications"
+killall -q SystemUIServer || true
 killall -q Finder || true
 killall -q Dock || true
 killall -q Safari || true
