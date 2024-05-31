@@ -5,31 +5,37 @@ help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | sed -e 's/\(\:.*\#\#\)/\:\ /' | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
 install-directories: ##Installs directories
-	@./scripts/install-directories.sh
+	@./scripts/00-create-directories.sh
 
-install-brew: ##Installs brew dependencies
-	@./scripts/install-brew.sh
+set-defaults: ##Sets macOS defaults
+	@./scripts/01-set-defaults.sh
 
-install-extra: ##Installs extra dependencies
-	@./scripts/install-extra.sh
+install-brew-packages: ##Installs brew packages
+	@./scripts/02-install-brew-packages.sh
 
-install-defaults: ##Installs macOS defaults
-	@./scripts/install-defaults.sh
+fetch-dotfiles: ##Fetch dotfiles
+	@./scripts/03-fetch-dotfiles.sh
 
-restore-config: ##Restores configuration
-	@./scripts/restore-config.sh
+install-python-packages: ##Installs python packages
+	@./scripts/04-install-python-packages.sh
 
-install-tmux-tpm: ##Installs tmux plugin manager
-	@./scripts/install-tmux-tpm.sh
+install-tmux-tpm: ##Restores configuration
+	@./scripts/05-install-tmux-tpm.sh
 
-install-post-restore: ##Installs scripts post restore
-	@./scripts/install-post-restore.sh
+restore-config: ##Restores config
+	@./scripts/06-restore-config.sh
 
-install-private-customizations: ##Installs private customizations
-	@./scripts/install-private-customizations.sh 
+install-k8s-plugins: ##Installs Kubernetes related plugins
+	@./scripts/07-install-k8s-plugins.sh
+
+catppuccin-theme: ##Catppuccin theming
+	@./scripts/08-catppuccin-theme.sh
+
+private-customizations: ##Private customizations
+	@./scripts/09-private-customizations.sh
 
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
-	@./scripts/create-utm-arch-linux-vm.sh
+	@./scripts/30-create-utm-arch-linux-vm.sh
 
 create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
-	@./scripts/create-utm-ubuntu-linux-vm.sh
+	@./scripts/30-create-utm-ubuntu-linux-vm.sh
