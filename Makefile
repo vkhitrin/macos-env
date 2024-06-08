@@ -34,6 +34,9 @@ catppuccin-theme: ##Catppuccin theming
 private-customizations: ##Private customizations
 	@./scripts/09-private-customizations.sh
 
+install-gh-extensions: ##Private customizations
+	@./scripts/10-install-gh-extensions.sh
+
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-arch-linux-vm.sh
 
