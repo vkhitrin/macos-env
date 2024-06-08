@@ -13,4 +13,9 @@ fi
 print_padded_title "helm - Install Helm Plugins"
 if [ -f /opt/homebrew/bin/helm ]; then
     helm plugin list | grep diff >/dev/null 2>/dev/null || helm plugin install https://github.com/databus23/helm-diff
+    helm diff completion zsh > /opt/homebrew/share/zsh-completions/_helm_diff
+    helm plugin list | grep cm-push >/dev/null 2>/dev/null || helm plugin install https://github.com/chartmuseum/helm-push
+    helm plugin list | grep drift >/dev/null 2>/dev/null || helm plugin install https://github.com/nikhilsbhat/helm-drift
+    helm drift completion zsh > /opt/homebrew/share/zsh-completions/_helm_drift
+    helm plugin list | grep schema >/dev/null 2>/dev/null || helm plugin install https://github.com/losisin/helm-values-schema-json.git
 fi
