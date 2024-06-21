@@ -6,7 +6,7 @@ source ./scripts/common.sh
 # Kubernetes krew plugins
 print_padded_title "krew - Install Kubernetes CLI Extensions Using krew"
 if [ -f /opt/homebrew/bin/kubectl-krew ]; then
-    kubectl krew install browse-pvc cert-manager ctr deprecations dup get-all graph history images node-admin node-logs node-restart node-shell nodepools resource-capacity restart sick-pods unlimited view-secret viewnode tree
+    kubectl krew install browse-pvc cert-manager ctr deprecations dup get-all graph history images node-admin node-logs node-restart node-shell nodepools resource-capacity restart sick-pods unlimited view-secret viewnode tree blame df-pv
 fi
 
 # helm plugins

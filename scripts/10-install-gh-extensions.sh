@@ -5,6 +5,6 @@ source ./scripts/common.sh
 
 print_padded_title "gh - Install GitHub CLI Extensions"
 if [ -f /opt/homebrew/bin/gh ]; then
-    gh extension install --force yusukebe/gh-markdown-preview
-    gh extension install --force dlvhdr/gh-dash
+    gh extension install --force yusukebe/gh-markdown-preview || true
+    gh extension install --force dlvhdr/gh-dash || true
 fi

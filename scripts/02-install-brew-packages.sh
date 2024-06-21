@@ -4,7 +4,7 @@ set -eo pipefail
 source ./scripts/common.sh
 
 # Verify brew is installed
-which brew > /dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
+which brew >/dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
 
 # Disable brew analytics
 print_padded_title "Brew - Disable Analytics"
@@ -22,8 +22,11 @@ brew bundle --quiet --file=Brewfile
 # print_padded_title "Brew - Start Services"
 # brew services start borders
 
+print_padded_title "Brew - Workarounds"
+xattr -d com.apple.quarantine /opt/homebrew/bin/clickhouse || true
+
 # Soft links
-print_padded_title "Files - Soft Links"
+print_padded_title "Brew - Soft Links"
 ln -sf /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl
 ln -sf /opt/homebrew/bin/tofu "$HOME/.local/bin/terraform"
 
@@ -38,11 +41,13 @@ print_padded_title "Brew - Completions"
 brew completions link
 # Add completions to tools that are not shipped by zsh-completions
 podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
-gh completion -s zsh > /opt/homebrew/share/zsh-completions/_gh
+gh completion -s zsh >/opt/homebrew/share/zsh-completions/_gh
 # [ -f "/opt/homebrew/share/zsh-completions/_glab" ] || glab completion -s zsh > /opt/homebrew/share/zsh-completions/_glab
 # [ -f "/opt/homebrew/share/zsh-completions/_bw" ] || bw completion --shell zsh > /opt/homebrew/share/zsh-completions/_bw
-mise completion zsh > /opt/homebrew/share/zsh-completions/_mise
-snipkit completion zsh > /opt/homebrew/share/zsh-completions/_snipkit
+mise completion zsh >/opt/homebrew/share/zsh-completions/_mise
+snipkit completion zsh >/opt/homebrew/share/zsh-completions/_snipkit
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
-# autoload bashcompinit && bashcompinit
-# autoload compinit && compinit
+print_padded_title "Brew - Notes"
+echo "Please run the following to enable completions:"
+echo "autoload bashcompinit && bashcompinit"
+echo "autoload compinit && compinit"
