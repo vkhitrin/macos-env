@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-export HOMEBREW_PATH_PREFIX="/opt/homebrew/bin"
+export HOMEBREW_PATH_PREFIX="/opt/homebrew"
+export HOMEBREW_BIN_PATH_PREFIX="${HOMEBREW_PATH_PREFIX}/bin"
+export HOMEBREW_CELLAR_PATH_PREFIX="${HOMEBREW_PATH_PREFIX}/cellar"
 
 # Function which prints an error message and then returns exit code 1
 function error_exit {

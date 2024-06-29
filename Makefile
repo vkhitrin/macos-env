@@ -43,5 +43,8 @@ create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-ubuntu-linux-vm.sh
 
+customize-jupyter-env: ##Customizes Jupyter environment
+	@./scripts/11-customize-jupyter-env.sh
+
 dump-brew-packages: ##Dumps brew/mas packages into Brewfile
 	@./scripts/99-dump-brew-packages.sh > ./Brewfile
