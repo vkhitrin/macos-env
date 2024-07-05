@@ -3,8 +3,13 @@ set -eo pipefail
 
 source ./scripts/common.sh
 
-print_padded_title "System Python - Install mackup"
-/usr/bin/python3 -m pip install mackup
-
-print_padded_title "Brew Python - Install Additional Software"
-$HOMEBREW_BIN_PATH_PREFIX/pip3 install --break-system-packages --upgrade pip passhole harlequin[postgres,s3,mysql,odbc,cassandra] scylla-cqlsh catppuccin[pygments]
+print_padded_title "Brew pipx - Install Additional Software"
+declare -a PIPX_PACKAGES
+declare -a PIPX_HARLEQUIN_PACKAGES
+PIPX_PACKAGES=("passhole" "harlequin" "scylla-cqlsh")
+PIPX_HARLEQUIN_PACKAGES=("catppuccin[pygments]" "boto3" "harlequin-postgres" "harlequin-mysql" "harlequin-odbc" "harlequin-cassandra")
+${HOMEBREW_BIN_PATH_PREFIX}/pipx install "${PIPX_PACKAGES[@]}"
+for HARLEQUIN_PACKAGE in "${PIPX_HARLEQUIN_PACKAGES[@]}"; do
+    ${HOMEBREW_BIN_PATH_PREFIX}/pipx inject harlequin "${HARLEQUIN_PACKAGE}"
+done
+${HOMEBREW_BIN_PATH_PREFIX}/pipx upgrade-all --include-injected
