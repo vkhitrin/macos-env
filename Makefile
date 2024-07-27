@@ -37,14 +37,17 @@ private-customizations: ##Private customizations
 install-gh-extensions: ##Private customizations
 	@./scripts/10-install-gh-extensions.sh
 
+customize-jupyter-env: ##Customizes Jupyter environment
+	@./scripts/11-customize-jupyter-env.sh
+
+1customize-apple-virtualization-configuration: ##Configures Apple Virtualization network configuration
+	@./scripts/12-customize-apple-virtualization-configuration.sh
+
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-arch-linux-vm.sh
 
 create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-ubuntu-linux-vm.sh
-
-customize-jupyter-env: ##Customizes Jupyter environment
-	@./scripts/11-customize-jupyter-env.sh
 
 dump-brew-packages: ##Dumps brew/mas packages into Brewfile
 	@./scripts/99-dump-brew-packages.sh > ./Brewfile

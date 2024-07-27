@@ -169,6 +169,7 @@ brew "libevent"
 brew "libffi"
 brew "libgcrypt"
 brew "libgit2"
+brew "libgit2@1.7"
 brew "libgpg-error"
 brew "libheif"
 brew "libidn"
@@ -398,6 +399,7 @@ brew "zeromq"
 brew "zimg"
 brew "zookeeper"
 brew "zplug"
+brew "zsh-autopair"
 brew "zsh-completions"
 brew "zsh-fast-syntax-highlighting"
 brew "zstd"
@@ -450,8 +452,6 @@ mas "Userscripts-Mac-App", id: 1463298887
 mas "Keynote", id: 409183694
 mas "1Blocker", id: 1365531024
 mas "Hush", id: 1544743900
-mas "Grammarly", id: 1462114288
-mas "LanguageTool", id: 1534275760
 mas "WireGuard", id: 1451685025
 mas "Numbers", id: 409203825
 mas "Xcode", id: 497799835
@@ -462,7 +462,7 @@ mas "Microsoft", id: 1295203466
 mas "Actions", id: 1586435171
 mas "Baking", id: 1601151613
 mas "Slack", id: 803453959
-mas "Refined", id: 1519867270
+mas "Gifski", id: 1351639930
 mas "Speed", id: 1521133201
 mas "TestFlight", id: 899247664
-mas "Gifski", id: 1351639930
+mas "Refined", id: 1519867270

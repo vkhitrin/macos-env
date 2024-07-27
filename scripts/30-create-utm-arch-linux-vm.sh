@@ -47,7 +47,7 @@ rm -rf /tmp/apple_vm_identifier.txt
 # EOF
 # }
 
-source /scripts/common.sh
+source ./scripts/common.sh
 [ -d "/Applications/UTM.app" ] || error_exit "UTM is not installed"
 [ -d "$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY" ] || error_exit "UTM virtual machine bundle directory '$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY' is not present"
 
