@@ -10,7 +10,7 @@ UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY="$HOME/Library/Containers/com.utmapp.UTM/D
 UTM_VIRTUAL_MACHINE_BUNDLE_PATH="$UTM_VIRTUAL_MACHINE_BUNDLES_DIRECTORY/$UTM_VIRTUAL_MACHINE_DISPLAY_NAME.utm"
 
 function _genereate_apple_virtual_machine_identifier {
-swift repl << EOF > /tmp/apple_vm_identifier.txt
+    swift repl <<EOF >/tmp/apple_vm_identifier.txt
 import Foundation
 import Virtualization
 
@@ -34,12 +34,12 @@ do {
     print("Error encoding data to plist: \(error)")
 }
 EOF
-cat /tmp/apple_vm_identifier.txt | tail -n1 | tr -d '\r' | xargs cat
-rm -rf /tmp/apple_vm_identifier.txt
+    cat /tmp/apple_vm_identifier.txt | tail -n1 | tr -d '\r' | xargs cat
+    rm -rf /tmp/apple_vm_identifier.txt
 }
 
 # Network device attachment has to be done via code, plist definition is not enough
-# --- 
+# ---
 # function _generate_apple_random_mac_addres {
 # swift repl << EOF
 # import Virtualization

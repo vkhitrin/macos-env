@@ -22,6 +22,7 @@ brew "adwaita-icon-theme"
 brew "aom"
 brew "apr"
 brew "apr-util"
+brew "argocd"
 brew "argon2"
 brew "aribb24"
 brew "asciidoc"
@@ -419,6 +420,7 @@ cask "fuse-t"
 cask "fuse-t-sshfs"
 cask "gns3"
 cask "grammarly-desktop"
+cask "grandperspective"
 cask "iina"
 cask "imageoptim"
 cask "kitty"
@@ -446,23 +448,22 @@ cask "wooshy"
 cask "xquartz"
 cask "zed"
 # Dumped using `mas list | awk '{print "mas","\"" $2 "\", id:", $1}'`
-mas "AWS", id: 6450935274
-mas "Strongbox", id: 897283731
-mas "Userscripts-Mac-App", id: 1463298887
-mas "Keynote", id: 409183694
-mas "1Blocker", id: 1365531024
-mas "Hush", id: 1544743900
-mas "WireGuard", id: 1451685025
-mas "Numbers", id: 409203825
-mas "Xcode", id: 497799835
-mas "Pages", id: 409201541
 mas "PrettyJSON", id: 1445328303
+mas "Keynote", id: 409183694
 mas "Vinegar", id: 1591303229
 mas "Microsoft", id: 1295203466
 mas "Actions", id: 1586435171
+mas "Speed", id: 1521133201
+mas "WireGuard", id: 1451685025
+mas "Userscripts-Mac-App", id: 1463298887
+mas "1Blocker", id: 1365531024
+mas "Hush", id: 1544743900
+mas "Pages", id: 409201541
+mas "AWS", id: 6450935274
+mas "Strongbox", id: 897283731
 mas "Baking", id: 1601151613
 mas "Slack", id: 803453959
 mas "Gifski", id: 1351639930
-mas "Speed", id: 1521133201
+mas "Numbers", id: 409203825
 mas "TestFlight", id: 899247664
 mas "Refined", id: 1519867270

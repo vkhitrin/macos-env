@@ -32,7 +32,7 @@ ln -sf /opt/homebrew/bin/tofu "$HOME/.local/bin/terraform"
 
 # Cleanup brew
 print_padded_title "Brew - Cleanup"
-brew cleanup
+brew cleanup --prune=all
 brew autoremove
 
 # Brew completions

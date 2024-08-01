@@ -19,29 +19,32 @@ fetch-dotfiles: ##Fetch dotfiles
 install-python-packages: ##Installs python packages
 	@./scripts/04-install-python-packages.sh
 
+install-npm-packages: ##Installs python packages
+	@./scripts/05-install-npm-packages.sh
+
 install-tmux-tpm: ##Restores configuration
-	@./scripts/05-install-tmux-tpm.sh
+	@./scripts/06-install-tmux-tpm.sh
 
 restore-config: ##Restores config
-	@./scripts/06-restore-config.sh
+	@./scripts/07-restore-config.sh
 
 install-k8s-plugins: ##Installs Kubernetes related plugins
-	@./scripts/07-install-k8s-plugins.sh
+	@./scripts/08-install-k8s-plugins.sh
 
 catppuccin-theme: ##Catppuccin theming
-	@./scripts/08-catppuccin-theme.sh
+	@./scripts/09-catppuccin-theme.sh
 
 private-customizations: ##Private customizations
-	@./scripts/09-private-customizations.sh
+	@./scripts/10-private-customizations.sh
 
 install-gh-extensions: ##Private customizations
-	@./scripts/10-install-gh-extensions.sh
+	@./scripts/11-install-gh-extensions.sh
 
 customize-jupyter-env: ##Customizes Jupyter environment
-	@./scripts/11-customize-jupyter-env.sh
+	@./scripts/12-customize-jupyter-env.sh
 
-1customize-apple-virtualization-configuration: ##Configures Apple Virtualization network configuration
-	@./scripts/12-customize-apple-virtualization-configuration.sh
+customize-apple-virtualization-configuration: ##Configures Apple Virtualization network configuration
+	@./scripts/13-customize-apple-virtualization-configuration.sh
 
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-arch-linux-vm.sh
