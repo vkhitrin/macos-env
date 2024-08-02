@@ -46,6 +46,9 @@ customize-jupyter-env: ##Customizes Jupyter environment
 customize-apple-virtualization-configuration: ##Configures Apple Virtualization network configuration
 	@./scripts/13-customize-apple-virtualization-configuration.sh
 
+populate-utm-virtualmachines-in-hosts: ##Populate UTM virtual machines in /etc/hosts
+	@./scripts/14-populate-utm-virtualmachines-in-hosts.sh
+
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-arch-linux-vm.sh
 
