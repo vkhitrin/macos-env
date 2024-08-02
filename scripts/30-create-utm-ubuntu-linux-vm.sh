@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# TODO: consider adding rosetta and multi-arch installtion inside the guest as part of cloud-init
+# FIXME: Ensure that `systemd-binfmt` is launched after mounting rosetta
 set -eo pipefail
 
 # Variable definition
