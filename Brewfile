@@ -6,7 +6,6 @@ tap "felixkratz/formulae"
 tap "flother/taps"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "jaredwideman/virt-manager"
 tap "jdx/tap"
 tap "kalissaac/tap"
 tap "khanhas/tap"
@@ -123,6 +122,7 @@ brew "gtk-vnc"
 brew "gtk4"
 brew "gtksourceview4"
 brew "guile"
+brew "gumbo-parser"
 brew "hadoop"
 brew "harfbuzz"
 brew "helm"
@@ -162,6 +162,7 @@ brew "libass"
 brew "libassuan"
 brew "libavif"
 brew "libb2"
+brew "libblastrampoline"
 brew "libbluray"
 brew "libcuefile"
 brew "libde265"
@@ -413,6 +414,7 @@ cask "audacity"
 cask "betterdisplay"
 cask "clickhouse"
 cask "clop"
+cask "crystalfetch"
 cask "drawio"
 cask "focusrite-control"
 cask "font-sf-mono"
@@ -429,6 +431,7 @@ cask "microsoft-auto-update"
 cask "microsoft-teams"
 cask "neovide"
 cask "obsidian"
+cask "powershell"
 cask "qmk-toolbox"
 cask "rapidapi"
 cask "raycast"
@@ -440,30 +443,32 @@ cask "sublime-text"
 cask "swiftdefaultappsprefpane"
 cask "temurin"
 cask "tetrio"
+cask "tribler"
 cask "utm"
 cask "via"
 cask "wezterm"
 cask "wireshark"
 cask "wooshy"
 cask "xquartz"
-cask "zed"
 # Dumped using `mas list | awk '{print "mas","\"" $2 "\", id:", $1}'`
-mas "PrettyJSON", id: 1445328303
+mas "AWS", id: 6450935274
+mas "Strongbox", id: 897283731
+mas "Userscripts-Mac-App", id: 1463298887
 mas "Keynote", id: 409183694
+mas "1Blocker", id: 1365531024
+mas "Otter", id: 1529696614
+mas "Hush", id: 1544743900
+mas "WireGuard", id: 1451685025
+mas "Numbers", id: 409203825
+mas "Xcode", id: 497799835
+mas "Pages", id: 409201541
+mas "PrettyJSON", id: 1445328303
 mas "Vinegar", id: 1591303229
 mas "Microsoft", id: 1295203466
 mas "Actions", id: 1586435171
-mas "Speed", id: 1521133201
-mas "WireGuard", id: 1451685025
-mas "Userscripts-Mac-App", id: 1463298887
-mas "1Blocker", id: 1365531024
-mas "Hush", id: 1544743900
-mas "Pages", id: 409201541
-mas "AWS", id: 6450935274
-mas "Strongbox", id: 897283731
 mas "Baking", id: 1601151613
 mas "Slack", id: 803453959
 mas "Gifski", id: 1351639930
-mas "Numbers", id: 409203825
+mas "Speed", id: 1521133201
 mas "TestFlight", id: 899247664
 mas "Refined", id: 1519867270

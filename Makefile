@@ -1,5 +1,5 @@
 .DEFAULT: help
-.PHONY: install-brew install-extra install-directories install-defaults install-tmux-tpm restore-config create-utm-arch-linux-vm create-utm-ubuntu-linux-vm
+.PHONY: install-directories set-defaults install-brew-packages fetch-dotfiles install-python-packages install-npm-packages install-tmux-tpm restore-config install-k8s-plugins catppuccin-theme private-customizations install-gh-extensions customize-jupyter-env customize-apple-virtualization-configuration populate-utm-virtualmachines-in-hosts create-utm-arch-linux-vm create-utm-ubuntu-linux-vm configure-mise dump-brew-packages
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | sed -e 's/\(\:.*\#\#\)/\:\ /' | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
@@ -54,6 +54,9 @@ create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 
 create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-ubuntu-linux-vm.sh
+
+configure-mise:  #Configures mise
+	@./scripts/15-configure-mise.sh
 
 dump-brew-packages: ##Dumps brew/mas packages into Brewfile
 	@./scripts/99-dump-brew-packages.sh > ./Brewfile
