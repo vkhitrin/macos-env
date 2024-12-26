@@ -18,4 +18,5 @@ if [ -f /opt/homebrew/bin/helm ]; then
     helm plugin list | grep drift >/dev/null 2>/dev/null || helm plugin install https://github.com/nikhilsbhat/helm-drift
     helm drift completion zsh > /opt/homebrew/share/zsh-completions/_helm_drift
     helm plugin list | grep schema >/dev/null 2>/dev/null || helm plugin install https://github.com/losisin/helm-values-schema-json.git
+    helm plugin list | grep secrets >/dev/null 2>/dev/null || helm plugin install https://github.com/jkroepke/helm-secrets
 fi

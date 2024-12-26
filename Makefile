@@ -1,10 +1,10 @@
 .DEFAULT: help
-.PHONY: install-directories set-defaults install-brew-packages fetch-dotfiles install-python-packages install-npm-packages install-tmux-tpm restore-config install-k8s-plugins catppuccin-theme private-customizations install-gh-extensions customize-jupyter-env customize-apple-virtualization-configuration populate-utm-virtualmachines-in-hosts create-utm-arch-linux-vm create-utm-ubuntu-linux-vm configure-mise dump-brew-packages
+.PHONY: create-directories set-defaults install-brew-packages fetch-dotfiles install-python-packages install-npm-packages install-tmux-tpm restore-config install-k8s-plugins catppuccin-theme private-customizations install-gh-extensions customize-jupyter-env customize-apple-virtualization-configuration populate-utm-virtualmachines-in-hosts create-utm-arch-linux-vm create-utm-ubuntu-linux-vm configure-mise dump-brew-packages boostrap-macos-environment
 
 help:
 	@fgrep -h "##" $(MAKEFILE_LIST) | sed -e 's/\(\:.*\#\#\)/\:\ /' | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-install-directories: ##Installs directories
+create-directories: ##Installs directories
 	@./scripts/00-create-directories.sh
 
 set-defaults: ##Sets macOS defaults
@@ -49,14 +49,16 @@ customize-apple-virtualization-configuration: ##Configures Apple Virtualization 
 populate-utm-virtualmachines-in-hosts: ##Populate UTM virtual machines in /etc/hosts
 	@./scripts/14-populate-utm-virtualmachines-in-hosts.sh
 
+configure-mise:  #Configures mise
+	@./scripts/15-configure-mise.sh
+
 create-utm-arch-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-arch-linux-vm.sh
 
 create-utm-ubuntu-linux-vm: ##Creates Arch Linux virtual machine in UTM
 	@./scripts/30-create-utm-ubuntu-linux-vm.sh
 
-configure-mise:  #Configures mise
-	@./scripts/15-configure-mise.sh
-
 dump-brew-packages: ##Dumps brew/mas packages into Brewfile
 	@./scripts/99-dump-brew-packages.sh > ./Brewfile
+
+boostrap-macos-environment: create-directories install-brew-packages  fetch-dotfiles install-python-packages install-npm-packages install-tmux-tpm restore-config install-k8s-plugins catppuccin-theme private-customizations install-gh-extensions customize-jupyter-env customize-apple-virtualization-configuration ##Bootstraps the macOS environment 

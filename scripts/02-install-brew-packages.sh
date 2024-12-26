@@ -49,5 +49,6 @@ snipkit completion zsh >/opt/homebrew/share/zsh-completions/_snipkit
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
 print_padded_title "Brew - Notes"
 echo "Please run the following to enable completions:"
+echo "compaudit | xargs chmod g-w"
 echo "autoload bashcompinit && bashcompinit"
 echo "autoload compinit && compinit"

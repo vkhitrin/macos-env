@@ -111,8 +111,8 @@ print_padded_title "UTM - Generate 'config.plist'"
 /usr/libexec/PlistBuddy -c 'add :ConfigurationVersion integer 4' "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/config.plist"
 
 print_padded_title "UTM - Download External Arch Linux Binaries"
-curl 'https://archboot.com/iso/aarch64/latest/boot/Image-aarch64' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/Image-aarch64"
-curl 'https://archboot.com/iso/aarch64/latest/boot/initrd-aarch64.img' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/initrd-aarch64.img"
+curl 'https://release.archboot.com/aarch64/latest/boot/Image' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/Image-aarch64"
+curl 'https://release.archboot.com/aarch64/latest/boot/initrd-aarch64.img' -so "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/initrd-aarch64.img"
 
 print_padded_title "UTM - Generate Disk Image (Storage)"
 hdiutil create -layout none -size "$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_SIZE" "$UTM_VIRTUAL_MACHINE_BUNDLE_PATH/Data/$UTM_VIRTUAL_MACHINE_STORAGE_DEVICE_UUID"
