@@ -47,7 +47,7 @@ gh completion -s zsh >/opt/homebrew/share/zsh-completions/_gh
 mise completion zsh >/opt/homebrew/share/zsh-completions/_mise
 snipkit completion zsh >/opt/homebrew/share/zsh-completions/_snipkit
 gitlab-ci-local --completion >/opt/homebrew/share/zsh-completions/_gitlab-ci-local
-istioctl completion zsh >/opt/homebrew/share/zsh-completions/_istioctl-local
+istioctl completion zsh >/opt/homebrew/share/zsh-completions/_istioctl
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
 print_padded_title "Brew - Notes"
 echo "Please run the following to enable completions:"
