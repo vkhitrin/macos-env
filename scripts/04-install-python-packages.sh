@@ -11,7 +11,7 @@ declare -a PIPX_HARLEQUIN_PACKAGES
 PIPX_PACKAGES=("passhole" "git+https://github.com/tconbeer/harlequin" "scylla-cqlsh" "rexi")
 # NOTE: harlequin-cassandra does not work on Python 3.13 due to datastax driver
 # PIPX_HARLEQUIN_PACKAGES=("catppuccin[pygments]" "boto3" "harlequin-postgres" "harlequin-mysql" "harlequin-odbc" "harlequin-cassandra" "git+https://github.com/ThomAub/harlequin-clickhouse")
-PIPX_HARLEQUIN_PACKAGES=("catppuccin[pygments]" "boto3" "harlequin-postgres" "harlequin-mysql" "harlequin-odbc" "git+https://github.com/ThomAub/harlequin-clickhouse")
+PIPX_HARLEQUIN_PACKAGES=("boto3" "harlequin-postgres" "harlequin-mysql" "harlequin-odbc")
 ${HOMEBREW_BIN_PATH_PREFIX}/pipx install "${PIPX_PACKAGES[@]}"
 for HARLEQUIN_PACKAGE in "${PIPX_HARLEQUIN_PACKAGES[@]}"; do
    ${HOMEBREW_BIN_PATH_PREFIX}/pipx inject harlequin "${HARLEQUIN_PACKAGE}"
