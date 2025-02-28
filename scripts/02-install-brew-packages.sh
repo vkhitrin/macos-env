@@ -15,7 +15,10 @@ print_padded_title "Brew - Update"
 brew update
 
 # Install brew packages
-print_padded_title "Brew - Install/Update"
+print_padded_title "Brew - Install/Update From Local"
+find ./brew/formulas/ -name "*.rb" -exec brew install --formula {} \;
+
+print_padded_title "Brew - Install/Update From Remote"
 [ -f Brewfile ] || error_exit "No Brewfile is found"
 brew bundle --quiet --file=Brewfile
 
@@ -23,7 +26,8 @@ brew bundle --quiet --file=Brewfile
 # brew services start borders
 
 print_padded_title "Brew - Workarounds"
-xattr -d com.apple.quarantine /opt/homebrew/bin/clickhouse || true
+xattr -d com.apple.quarantine /opt/homebrew/bin/clickhouse 2>/dev/null || true
+xattr -d com.apple.quarantine /opt/homebrew/bin/nvim 2>/dev/null || true
 
 # Soft links
 print_padded_title "Brew - Soft Links"
@@ -40,14 +44,9 @@ print_padded_title "Brew - Completions"
 # Link shipped brew completions
 brew completions link
 # Add completions to tools that are not shipped by zsh-completions
-podman completion zsh -f /opt/homebrew/share/zsh-completions/_podman
-gh completion -s zsh >/opt/homebrew/share/zsh-completions/_gh
-# [ -f "/opt/homebrew/share/zsh-completions/_glab" ] || glab completion -s zsh > /opt/homebrew/share/zsh-completions/_glab
-# [ -f "/opt/homebrew/share/zsh-completions/_bw" ] || bw completion --shell zsh > /opt/homebrew/share/zsh-completions/_bw
-mise completion zsh >/opt/homebrew/share/zsh-completions/_mise
 snipkit completion zsh >/opt/homebrew/share/zsh-completions/_snipkit
 gitlab-ci-local --completion >/opt/homebrew/share/zsh-completions/_gitlab-ci-local
-istioctl completion zsh >/opt/homebrew/share/zsh-completions/_istioctl
+which istioctl >/dev/null 2>/dev/null && istioctl completion zsh >/opt/homebrew/share/zsh-completions/_istioctl
 jira completion zsh >/opt/homebrew/share/zsh-completions/_jira
 op completion zsh >/opt/homebrew/share/zsh-completions/_op
 # [ -f "/opt/homebrew/share/zsh-completions/_virtctl" ] || virtctl completion zsh > /opt/homebrew/share/zsh-completions/_virtctl
