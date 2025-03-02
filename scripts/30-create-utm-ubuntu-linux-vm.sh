@@ -21,7 +21,7 @@ instance-id: ${UTM_VIRTUAL_MACHINE_DISPLAY_NAME}
 local-hostname: ${UTM_VIRTUAL_MACHINE_DISPLAY_NAME}
 """
 CLOUDINIT_USERDATA_CONTENT="""#cloud-config
-password: 12345678
+password: '12345678'
 chpasswd:
   expire: false
 write_files:
@@ -45,29 +45,32 @@ write_files:
       Package: flash-kernel
       Pin: release *
       Pin-Priority: 1
+  - path: /etc/systemd/resolved.conf.d/dns_servers.conf
+    content: |
+      [Resolve]
+      DNS=8.8.8.8 1.1.1.1
+      Domains=~.
+    permissions: '0644'
+  - path: /etc/apt/sources.list.d/amd64-sources.list
+    content: |
+      deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble main restricted universe multiverse
+      deb [arch=amd64] http://security.ubuntu.com/ubuntu noble-security main restricted universe multiverse
+      deb [arch=amd64] http://archive.ubuntu.com/ubuntu noble-updates main restricted universe multiverse
+    owner: root:root
+    permissions: '0644'
 mounts:
   - [ rosetta, /media/rosetta, virtiofs, \"ro,nofail\", \"0\", \"0\" ]
 apt:
-  sources:
-    amd64-main:
-      source: deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
-    amd64-updates:
-      source: deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
-    amd64-security:
-      source: deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
-    amd64-backports:
-      source: deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ noble-backports main restricted universe multiverse
+  disable: true
 runcmd:
   - dpkg --add-architecture amd64
+  - systemctl restart systemd-resolved
   - apt update || true
   - apt remove -y flash-kernel
+  - apt autoremove -y
   - systemctl daemon-reload
   - systemctl enable --now mount-rosetta-directory.service
   - systemctl restart systemd-binfmt
-  - /usr/sbin/update-binfmts --install rosetta /media/rosetta/rosetta \
-     --magic "\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00" \
-     --mask "\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
-     --credentials yes --preserve no --fix-binary yes
   - mount -a
   - apt install -y libc6:amd64
 """
