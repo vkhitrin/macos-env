@@ -28,6 +28,7 @@ brew bundle --quiet --file=Brewfile
 print_padded_title "Brew - Workarounds"
 xattr -d com.apple.quarantine /opt/homebrew/bin/clickhouse 2>/dev/null || true
 xattr -d com.apple.quarantine /opt/homebrew/bin/nvim 2>/dev/null || true
+which podman >/dev/null 2>&1 && ln -sf /opt/homebrew/bin/podman "${HOME}/.local/bin/docker"
 
 # Soft links
 print_padded_title "Brew - Soft Links"
