@@ -15,8 +15,8 @@ print_padded_title "Brew - Update"
 brew update
 
 # Install brew packages
-print_padded_title "Brew - Install/Update From Local"
-find ./brew/formulas/ -name "*.rb" -exec brew install --formula {} \;
+print_padded_title "Brew - Install/Update Local Formulas"
+find ./brew/formulas/ -name "*.rb" -not -path '*font-sf-mono-nerd-font.rb' -exec brew install --formula {} \;
 
 print_padded_title "Brew - Install/Update From Remote"
 [ -f Brewfile ] || error_exit "No Brewfile is found"

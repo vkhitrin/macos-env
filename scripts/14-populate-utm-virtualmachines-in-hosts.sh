@@ -1,7 +1,7 @@
 set -eo pipefail
 
 leases_to_jsons() {
-    cat /var/db/dhcpd_leases | gsed -r 's/(\w+)=(.*)/"\1": "\2",/' | gsed -E -n 'H; x; s:,(\s*\n\s*}):\1:; P; ${x; p}' | gsed '1 d' | jq .
+    gsed -r 's/(\w+)=(.*)/"\1": "\2",/' /var/db/dhcpd_leases | gsed -E -n 'H; x; s:,(\s*\n\s*}):\1:; P; ${x; p}' | gsed '1 d' | jq .
 }
 LEASES_JSONS=$(leases_to_jsons)
 for JSON in $(echo ${LEASES_JSONS} | jq -c .); do
