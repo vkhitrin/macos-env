@@ -5,6 +5,8 @@ source ./scripts/common.sh
 
 # Verify brew is installed
 which brew >/dev/null 2>/dev/null || error_exit "Brew is not installed, please download from https://brew.sh/"
+# Verify podman is installed
+which podman >/dev/null 2>/dev/null || error_exit "podman is not installed, please install from brew."
 
 # Disable brew analytics
 print_padded_title "Brew - Disable Analytics"
@@ -13,10 +15,6 @@ brew analytics off
 # Update brew
 print_padded_title "Brew - Update"
 brew update
-
-# Install brew packages
-print_padded_title "Brew - Install/Update Local Formulas"
-find ./brew/formulas/ -name "*.rb" -not -path '*font-sf-mono-nerd-font.rb' -exec brew install --formula {} \;
 
 print_padded_title "Brew - Install/Update From Remote"
 [ -f Brewfile ] || error_exit "No Brewfile is found"
