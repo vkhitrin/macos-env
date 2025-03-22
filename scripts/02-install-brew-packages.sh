@@ -8,6 +8,11 @@ which brew >/dev/null 2>/dev/null || error_exit "Brew is not installed, please d
 # Verify podman is installed
 which podman >/dev/null 2>/dev/null || error_exit "podman is not installed, please install from brew."
 
+print_padded_title "macos - Ensure Podman Machine Is Running"
+if [[ $(podman machine info --format '{{ .Host.MachineState }}') != "Running" ]]; then
+    error_exit "Please ensure local podman machine is running"
+fi
+
 # Disable brew analytics
 print_padded_title "Brew - Disable Analytics"
 brew analytics off
@@ -38,11 +43,15 @@ print_padded_title "Brew - Cleanup"
 brew cleanup --prune=all
 brew autoremove
 
+print_padded_title "Brew - Manpages"
+which jira >/dev/null 2>/dev/null && jira man --generate --output /opt/homebrew/share/man/man7/
+
 # Brew completions
 print_padded_title "Brew - Completions"
+brew generate-man-completions || true
 # Link shipped brew completions
 brew completions link
-# Add completions to tools that are not shipped by zsh-completions
+# Add completions to tools that are not shipped by zsh-completions or brew
 snipkit completion zsh >/opt/homebrew/share/zsh-completions/_snipkit
 gitlab-ci-local --completion >/opt/homebrew/share/zsh-completions/_gitlab-ci-local
 which istioctl >/dev/null 2>/dev/null && istioctl completion zsh >/opt/homebrew/share/zsh-completions/_istioctl

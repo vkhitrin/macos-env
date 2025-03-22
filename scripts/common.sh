@@ -23,8 +23,3 @@ print_padded_title "macOS Check"
 if [[ $(uname) != "Darwin" ]];then
     error_exit "Please make sure you're running on macOS"
 fi
-
-print_padded_title "macos - Ensure Podman Machine Is Running"
-if [[ $(podman machine info --format '{{ .Host.MachineState }}') != "Running" ]]; then
-    error_exit "Please ensure local podman machine is running"
-fi
