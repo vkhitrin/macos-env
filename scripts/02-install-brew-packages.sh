@@ -8,9 +8,12 @@ which brew >/dev/null 2>/dev/null || error_exit "Brew is not installed, please d
 # Verify podman is installed
 which podman >/dev/null 2>/dev/null || error_exit "podman is not installed, please install from brew."
 
-print_padded_title "macos - Ensure Podman Machine Is Running"
-if [[ $(podman machine info --format '{{ .Host.MachineState }}') != "Running" ]]; then
-    error_exit "Please ensure local podman machine is running"
+# We use podman to build SF Mono patched fonts
+print_padded_title "macos - Ensure Podman Machine Is Running (Only If Needed)"
+if [[ ! -d "/opt/homebrew/Caskroom/font-sf-mono-nerd-font" && -z "${SKIP_PODMAN_CHECK}" ]]; then
+    if [[ $(podman machine info --format '{{ .Host.MachineState }}') != "Running" ]]; then
+        error_exit "Please ensure local podman machine is running, or skip check using SKIP_PODMAN_CHECK environment variable."
+    fi
 fi
 
 # Disable brew analytics

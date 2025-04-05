@@ -1,4 +1,3 @@
-tap "ankitpokhrel/jira-cli"
 tap "austinliuigi/brew-neovim-nightly", "https://github.com/austinliuigi/brew-neovim-nightly.git"
 tap "aws/tap"
 tap "buo/cask-upgrade"
@@ -7,13 +6,15 @@ tap "dhth/tap"
 tap "felixkratz/formulae"
 tap "flother/taps"
 tap "hashicorp/tap"
-tap "homebrew/bundle"
+tap "homebrew/command-not-found"
+tap "homebrew/test-bot"
 tap "kalissaac/tap"
 tap "knqyf263/pet"
 tap "koekeishiya/formulae"
 tap "kong/deck"
 tap "lemoony/tap"
 tap "macos-fuse-t/cask"
+tap "norwoodj/tap"
 tap "osx-cross/avr"
 tap "qmk/qmk"
 tap "sourcegraph/src-cli"
@@ -25,7 +26,6 @@ brew "fontconfig"
 brew "libunistring"
 brew "gettext"
 brew "pcre2"
-brew "python-setuptools"
 brew "glib"
 brew "xorgproto"
 brew "libxau"
@@ -200,8 +200,6 @@ brew "zeromq"
 brew "zimg"
 brew "ffmpeg"
 brew "ffmpeg@6"
-brew "podman"
-brew "font-sf-mono-nerd-font"
 brew "fpp"
 brew "libusb"
 brew "freerdp"
@@ -348,6 +346,8 @@ brew "mongosh"
 brew "msgpack"
 brew "mujs"
 brew "mupdf"
+brew "tree-sitter"
+brew "neovim"
 brew "nmap"
 brew "numpy"
 brew "oci-cli"
@@ -364,12 +364,14 @@ brew "wdiff"
 brew "pkgdiff"
 brew "pngcrush"
 brew "pngquant"
+brew "podman"
 brew "podman-compose"
 brew "pre-commit"
 brew "presenterm"
 brew "prettier"
 brew "python-argcomplete"
 brew "python-markdown"
+brew "python-setuptools"
 brew "python-tabulate"
 brew "python@3.10"
 brew "python@3.11"
@@ -393,6 +395,7 @@ brew "sshpass"
 brew "starship"
 brew "swig"
 brew "taplo"
+brew "tealdeer"
 brew "telnet"
 brew "terraform-ls"
 brew "terragrunt"
@@ -401,7 +404,6 @@ brew "texinfo"
 brew "tflint"
 brew "tmux"
 brew "tree"
-brew "tree-sitter"
 brew "trivy"
 brew "universal-ctags"
 brew "usbredir"
@@ -435,6 +437,7 @@ brew "hashicorp/tap/vault"
 brew "knqyf263/pet/pet"
 brew "kong/deck/deck"
 brew "lemoony/tap/snipkit"
+brew "norwoodj/tap/helm-docs"
 brew "osx-cross/avr/avr-binutils"
 brew "osx-cross/avr/avr-gcc@9"
 brew "sourcegraph/src-cli/src-cli"
@@ -475,27 +478,23 @@ cask "via"
 cask "wezterm"
 cask "wireshark"
 cask "xquartz"
-mas "1Blocker", id: 1365531024
-mas "Actions", id: 1586435171
-mas "AWS SSO Extender", id: 6450935274
-mas "Baking Soda", id: 1601151613
-mas "Gifski", id: 1351639930
-mas "Hush", id: 1544743900
-mas "Keynote", id: 409183694
-mas "MeetInOne", id: 1542778639
-mas "Numbers", id: 409203825
-mas "Otter RSS", id: 1529696614
-mas "Pages", id: 409201541
-mas "PrettyJSON for Safari", id: 1445328303
-mas "Refined GitHub", id: 1519867270
-mas "Slack", id: 803453959
-mas "SnippetsLab", id: 1006087419
-mas "Speed Player", id: 1521133201
-mas "Strongbox", id: 897283731
-mas "TestFlight", id: 899247664
-mas "Twingate", id: 1501592214
-mas "Userscripts-Mac-App", id: 1463298887
-mas "Vinegar", id: 1591303229
-mas "Windows App", id: 1295203466
-mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
+mas "1Blocker.app", id: 1365531024
+mas "AnOtterRSS.app", id: 1529696614
+mas "AWS SSO Extender.app", id: 6450935274
+mas "Baking Soda.app", id: 1601151613
+mas "Gifski.app", id: 1351639930
+mas "Hush.app", id: 1544743900
+mas "Keynote.app", id: 409183694
+mas "Numbers.app", id: 409203825
+mas "Pages.app", id: 409201541
+mas "PrettyJSON for Safari.app", id: 1445328303
+mas "Refined GitHub.app", id: 1519867270
+mas "Slack.app", id: 803453959
+mas "SnippetsLab.app", id: 1006087419
+mas "Speed Player.app", id: 1521133201
+mas "Strongbox.app", id: 897283731
+mas "TestFlight.app", id: 899247664
+mas "Twingate.app", id: 1501592214
+mas "Userscripts.app", id: 1463298887
+mas "Vinegar.app", id: 1591303229
+mas "Xcode.app", id: 497799835
